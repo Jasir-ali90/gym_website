@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dumbbell, MessageCircle } from 'lucide-react';
+import { Dumbbell, MessageCircle, MapPin, Phone } from 'lucide-react';
 import { Instagram, Facebook } from './BrandIcons';
 
 export default function Footer({ onOpenPassModal }) {
@@ -48,12 +48,12 @@ export default function Footer({ onOpenPassModal }) {
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: '#fff' }}>
                   PREMIUM <span className="text-red-gradient">FITNESS</span>
                 </div>
-                <div style={{ fontSize: '0.65rem', color: '#ff4d56', fontWeight: 800 }}>CHAPTER 1.O • NORTH KARACHI</div>
+                <div style={{ fontSize: '0.65rem', color: '#ff4d56', fontWeight: 800 }}>ELITE FITNESS CHAIN • KARACHI</div>
               </div>
             </div>
 
             <p style={{ fontSize: '0.84rem', lineHeight: 1.55, color: '#94a3b8' }}>
-              Founded & operated by <strong style={{ color: '#fff' }}>Muhammad Ali</strong>. Karachi’s premier strength sanctuary featuring heavy iron, bio-mechanic machines, and certified transformation coaches.
+              Founded & operated by <strong style={{ color: '#fff' }}>Muhammad Ali</strong>. Karachi’s premier strength and fitness chain featuring heavy iron, bio-mechanic machines, and certified transformation coaches.
             </p>
 
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -178,20 +178,46 @@ export default function Footer({ onOpenPassModal }) {
             </div>
           </div>
 
-          {/* Col 4: Location */}
+          {/* Col 4: Locations (Chapter 1.0, 2.0, 3.0) */}
           <div>
-            <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 800, color: '#fff', marginBottom: '14px', textTransform: 'uppercase' }}>
-              Location & Contact
+            <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 800, color: '#fff', marginBottom: '14px', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <MapPin size={16} style={{ color: '#ef4444' }} /> Our Chapters
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8rem' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', padding: '9px', borderRadius: '8px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
-                <span style={{ color: '#ff4d56', fontWeight: 800 }}>★ CHAPTER 1.O (Flagship)</span>
-                <div>2nd Floor, Plot No: A-901, Shahrah-e-Usman, Sector 11-A, North Karachi</div>
-                <div style={{ color: '#fff', marginTop: '3px', fontWeight: 600 }}>Helpline: 0313-2229925</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', fontSize: '0.78rem' }}>
+              {/* Chapter 1.0 */}
+              <div style={{ background: 'rgba(229, 9, 20, 0.06)', padding: '9px 11px', borderRadius: '8px', border: '1px solid rgba(229, 9, 20, 0.35)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
+                  <span style={{ color: '#ff4d56', fontWeight: 800, fontSize: '0.8rem' }}>CHAPTER 1.O</span>
+                  <span style={{ fontSize: '0.62rem', background: 'rgba(229,9,20,0.2)', color: '#fca5a5', padding: '1px 5px', borderRadius: '3px', fontWeight: 700 }}>Flagship</span>
+                </div>
+                <div style={{ color: '#cbd5e1', lineHeight: 1.35 }}>2nd Floor, Plot A-901, Shahrah-e-Usman, Sector 11-A, North Karachi</div>
+                <a href="tel:+923132229925" style={{ color: '#fff', marginTop: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.74rem' }}>
+                  <Phone size={10} style={{ color: '#ef4444' }} /> 0313-2229925
+                </a>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '8px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <span style={{ color: '#cbd5e1', fontWeight: 700 }}>CHAPTER 3.0</span>
-                <div>Sector 14-B, Shadman Town, Karachi</div>
+
+              {/* Chapter 2.0 */}
+              <div style={{ background: 'rgba(255, 255, 255, 0.025)', padding: '9px 11px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
+                  <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.8rem' }}>CHAPTER 2.0</span>
+                  <span style={{ fontSize: '0.62rem', background: 'rgba(255,255,255,0.1)', color: '#cbd5e1', padding: '1px 5px', borderRadius: '3px', fontWeight: 700 }}>Buffer Zone</span>
+                </div>
+                <div style={{ color: '#94a3b8', lineHeight: 1.35 }}>Sector 15-A, Near Power House Chowrangi, North Karachi</div>
+                <a href="tel:+923132229925" style={{ color: '#cbd5e1', marginTop: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.74rem' }}>
+                  <Phone size={10} style={{ color: '#ef4444' }} /> 0313-2229925
+                </a>
+              </div>
+
+              {/* Chapter 3.0 */}
+              <div style={{ background: 'rgba(255, 255, 255, 0.025)', padding: '9px 11px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
+                  <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.8rem' }}>CHAPTER 3.0</span>
+                  <span style={{ fontSize: '0.62rem', background: 'rgba(255,255,255,0.1)', color: '#cbd5e1', padding: '1px 5px', borderRadius: '3px', fontWeight: 700 }}>Shadman Town</span>
+                </div>
+                <div style={{ color: '#94a3b8', lineHeight: 1.35 }}>Sector 14-B, Main Shadman Town, Karachi</div>
+                <a href="tel:+923132229925" style={{ color: '#cbd5e1', marginTop: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.74rem' }}>
+                  <Phone size={10} style={{ color: '#ef4444' }} /> 0313-2229925
+                </a>
               </div>
             </div>
           </div>
@@ -209,10 +235,10 @@ export default function Footer({ onOpenPassModal }) {
           fontSize: '0.78rem'
         }}>
           <div>
-            © {new Date().getFullYear()} PREMIUM FITNESS CHAPTER 1.O. All Rights Reserved. Owner: Muhammad Ali. North Karachi, Sindh.
+            © {new Date().getFullYear()} PREMIUM FITNESS. All Rights Reserved. Founder & Owner: Muhammad Ali. Karachi, Pakistan.
           </div>
-          <div>
-            <span>Discipline • Iron • Community</span>
+          <div style={{ color: '#ff4d56', fontWeight: 600, display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span>Chapter 1.0</span> • <span>Chapter 2.0</span> • <span>Chapter 3.0</span>
           </div>
         </div>
       </div>

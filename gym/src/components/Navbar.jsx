@@ -135,8 +135,8 @@ export default function Navbar({ onOpenPassModal }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, overflow: 'hidden' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' }}>
               <span className="pulse-green"></span>
-              <strong style={{ color: '#fff', letterSpacing: '0.5px' }}>CHAPTER 1.O</strong>
-              <span className="announcement-location" style={{ color: '#94a3b8' }}>• Sector 11-A, North Karachi</span>
+              <strong style={{ color: '#fff', letterSpacing: '0.5px' }}>PREMIUM FITNESS</strong>
+              <span className="announcement-location" style={{ color: '#94a3b8' }}>• Karachi's Elite Gym Network</span>
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#cbd5e1', whiteSpace: 'nowrap' }} className="nav-desktop-only">
               <Clock size={12} style={{ color: '#ef4444' }} /> Mon–Sat (6AM-11AM & 5PM-12AM) | <strong style={{ color: '#ef4444' }}>Sun: CLOSED</strong>
@@ -155,7 +155,7 @@ export default function Navbar({ onOpenPassModal }) {
             </a>
             <span style={{ color: 'rgba(255,255,255,0.2)' }} className="nav-desktop-only">|</span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: '#cbd5e1' }} className="nav-desktop-only">
-              <MapPin size={11} style={{ color: '#ef4444' }} /> 2nd Floor, 901 Shahrah-e-Usman
+              <MapPin size={11} style={{ color: '#ef4444' }} /> Multiple Locations in Karachi
             </span>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function Navbar({ onOpenPassModal }) {
             <div style={{ 
               fontFamily: 'var(--font-display)', 
               fontWeight: 900, 
-              fontSize: '1.12rem', 
+              fontSize: '1.14rem', 
               letterSpacing: '0.5px', 
               color: '#ffffff',
               lineHeight: 1.1,
@@ -204,21 +204,21 @@ export default function Navbar({ onOpenPassModal }) {
             }}>
               PREMIUM <span className="text-red-gradient">FITNESS</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginTop: '2px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '2px' }}>
               <span style={{
                 background: 'var(--red-gradient)',
                 color: '#fff',
                 fontWeight: 900,
-                fontSize: '0.58rem',
-                padding: '1px 5px',
+                fontSize: '0.56rem',
+                padding: '1px 6px',
                 borderRadius: '3px',
-                letterSpacing: '0.5px',
+                letterSpacing: '0.6px',
                 whiteSpace: 'nowrap'
               }}>
-                CHAPTER 1.O
+                EST. KARACHI
               </span>
-              <span style={{ fontSize: '0.62rem', color: '#94a3b8', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>
-                NORTH KARACHI
+              <span style={{ fontSize: '0.62rem', color: '#94a3b8', letterSpacing: '0.6px', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                ELITE FITNESS CLUBS
               </span>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function Navbar({ onOpenPassModal }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           {/* Desktop WhatsApp CTA */}
           <a
-            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness%20Chapter%201.O,%20North%20Karachi."
+            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness,%20Karachi."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp desktop-action-btn"
@@ -290,7 +290,7 @@ export default function Navbar({ onOpenPassModal }) {
 
           {/* Mobile Quick WhatsApp Button */}
           <a
-            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness%20Chapter%201.O,%20North%20Karachi."
+            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness,%20Karachi."
             target="_blank"
             rel="noopener noreferrer"
             className="mobile-quick-wa-btn"
@@ -405,7 +405,7 @@ export default function Navbar({ onOpenPassModal }) {
               <Sparkles size={16} /> Claim Free 1-Day Pass
             </button>
             <a
-              href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness%20Chapter%201.O,%20North%20Karachi."
+              href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness,%20Karachi."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"
