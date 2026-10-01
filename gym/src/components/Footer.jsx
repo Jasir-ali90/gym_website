@@ -33,8 +33,8 @@ export default function Footer({ onOpenPassModal }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{
-                width: '42px',
-                height: '42px',
+                width: '44px',
+                height: '44px',
                 borderRadius: '10px',
                 background: '#0d0f14',
                 border: '1.5px solid rgba(229, 9, 20, 0.65)',
@@ -46,9 +46,9 @@ export default function Footer({ onOpenPassModal }) {
                 flexShrink: 0
               }}>
                 <img 
-                  src="/assets/pf_logo.png" 
+                  src="/assets/pf_emblem.png" 
                   alt="Premium Fitness Logo" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
                 />
               </div>
               <div>

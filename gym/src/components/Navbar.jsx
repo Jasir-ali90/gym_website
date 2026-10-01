@@ -192,9 +192,9 @@ export default function Navbar({ onOpenPassModal }) {
             overflow: 'hidden'
           }}>
             <img 
-              src="/assets/pf_logo.png" 
+              src="/assets/pf_emblem.png" 
               alt="Premium Fitness Logo" 
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
             />
           </div>
           <div>
