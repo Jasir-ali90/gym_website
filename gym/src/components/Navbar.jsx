@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Dumbbell, Phone, MessageCircle, Menu, X, Sparkles, MapPin, Clock } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, Sparkles, MapPin, Clock } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'Facilities', href: '#facilities', id: 'facilities' },
@@ -179,18 +179,23 @@ export default function Navbar({ onOpenPassModal }) {
           style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '9px', flexShrink: 0 }}
         >
           <div style={{
-            width: '38px',
-            height: '38px',
-            borderRadius: '9px',
-            background: 'linear-gradient(135deg, #240a0d 0%, #0d0f14 100%)',
-            border: '1.5px solid rgba(229, 9, 20, 0.7)',
+            width: '40px',
+            height: '40px',
+            borderRadius: '10px',
+            background: '#0d0f14',
+            border: '1.5px solid rgba(229, 9, 20, 0.75)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 16px rgba(229, 9, 20, 0.35)',
-            flexShrink: 0
+            boxShadow: '0 0 16px rgba(229, 9, 20, 0.4)',
+            flexShrink: 0,
+            overflow: 'hidden'
           }}>
-            <Dumbbell size={20} style={{ color: '#ff2a38' }} />
+            <img 
+              src="/assets/pf_logo.png" 
+              alt="Premium Fitness Logo" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
           </div>
           <div>
             <div style={{ 

@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
+# Premium Fitness - Official robots.txt
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow administrative/private endpoints if any
+Disallow: /api/
+Disallow: /admin/

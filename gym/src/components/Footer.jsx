@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dumbbell, MessageCircle, MapPin, Phone } from 'lucide-react';
+import { MessageCircle, MapPin, Phone } from 'lucide-react';
 import { Instagram, Facebook } from './BrandIcons';
 
 export default function Footer({ onOpenPassModal }) {
@@ -33,16 +33,23 @@ export default function Footer({ onOpenPassModal }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '8px',
-                background: 'linear-gradient(135deg, #1f0b0d 0%, #0d0f14 100%)',
-                border: '1px solid rgba(229, 9, 20, 0.5)',
+                width: '42px',
+                height: '42px',
+                borderRadius: '10px',
+                background: '#0d0f14',
+                border: '1.5px solid rgba(229, 9, 20, 0.65)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                overflow: 'hidden',
+                boxShadow: '0 0 14px rgba(229, 9, 20, 0.35)',
+                flexShrink: 0
               }}>
-                <Dumbbell size={18} style={{ color: '#ff2a38' }} />
+                <img 
+                  src="/assets/pf_logo.png" 
+                  alt="Premium Fitness Logo" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                />
               </div>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem', color: '#fff' }}>
