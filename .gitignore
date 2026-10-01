@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+gym/node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production build
+build/
+gym/build/
+
+# Environment and local settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
