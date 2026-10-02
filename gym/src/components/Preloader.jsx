@@ -4,8 +4,8 @@ export default function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [fading, setFading] = useState(false);
 
-  // Exact 15.0 seconds duration guaranteed via real-time clock
-  const DURATION_MS = 15000;
+  // Exact 8.0 seconds duration guaranteed via real-time clock
+  const DURATION_MS = 8000;
 
   useEffect(() => {
     const startTime = Date.now();
@@ -26,14 +26,14 @@ export default function Preloader({ onComplete }) {
 
   useEffect(() => {
     if (progress === 100) {
-      // Hold at 100% for 500ms so the user sees the completed state
+      // Hold at 100% for 450ms so the user sees the completed state
       const fadeTimeout = setTimeout(() => {
         setFading(true);
-      }, 500);
+      }, 450);
 
       const finishTimeout = setTimeout(() => {
         if (onComplete) onComplete();
-      }, 1000);
+      }, 950);
 
       return () => {
         clearTimeout(fadeTimeout);
@@ -44,12 +44,11 @@ export default function Preloader({ onComplete }) {
 
   // Derived status text - directly synchronized with progress percentage
   const getStatusText = (pct) => {
-    if (pct < 15) return 'Initializing Strength Empire...';
-    if (pct < 32) return 'Loading Heavy Iron & Bio-Mechanic Machines...';
-    if (pct < 50) return 'Configuring Shift Timings & 100% Private Ladies Shift...';
-    if (pct < 70) return 'Syncing Instagram Reels & Community Feeds...';
-    if (pct < 88) return 'Calibrating Olympic Lifting Platforms & Cardio Zone...';
-    if (pct < 100) return 'Finalizing Peak Athletic Readiness...';
+    if (pct < 18) return 'Initializing Strength Empire...';
+    if (pct < 38) return 'Loading Heavy Iron & Bio-Mechanic Machines...';
+    if (pct < 60) return 'Configuring Shift Timings & 100% Private Ladies Shift...';
+    if (pct < 80) return 'Syncing Instagram Reels & Community Feeds...';
+    if (pct < 99) return 'Finalizing Peak Athletic Readiness...';
     return 'Welcome to Premium Fitness Chapter 1.O';
   };
 
@@ -218,7 +217,7 @@ export default function Preloader({ onComplete }) {
               width: `${progress}%`,
               background: 'linear-gradient(90deg, #ff3b45 0%, #e50914 50%, #ff1e27 100%)',
               boxShadow: '0 0 12px rgba(255, 30, 39, 0.8)',
-              transition: 'width 0.17s linear',
+              transition: 'width 0.08s linear',
               borderRadius: '999px',
             }}
           />
