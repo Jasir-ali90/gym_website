@@ -210,7 +210,7 @@ export default function Navbar({ onOpenPassModal }) {
               PREMIUM <span className="text-red-gradient">FITNESS</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '2px' }}>
-              <span style={{
+              <span className="brand-badge-est" style={{
                 background: 'var(--red-gradient)',
                 color: '#fff',
                 fontWeight: 900,
@@ -477,6 +477,9 @@ export default function Navbar({ onOpenPassModal }) {
           .announcement-mobile-closed {
             display: inline !important;
           }
+          .mobile-quick-wa-btn {
+            display: none !important; /* HIDE REDUNDANT WHATSAPP IN NAVBAR HEADER ON PHONES FOR CLEAN HAMBURGER */
+          }
         }
 
         /* Compact Phones (Below 480px) */
@@ -484,16 +487,22 @@ export default function Navbar({ onOpenPassModal }) {
           .brand-badge-secondary {
             display: none !important;
           }
+          .brand-badge-est {
+            display: none !important;
+          }
+          .announcement-mobile-closed {
+            display: none !important;
+          }
         }
 
         /* Tiny Screens (Below 380px) */
         @media (max-width: 380px) {
           .brand-logo-text {
-            font-size: 1.02rem !important;
+            font-size: 0.96rem !important;
           }
           .brand-logo-icon {
-            width: 35px !important;
-            height: 35px !important;
+            width: 32px !important;
+            height: 32px !important;
           }
         }
       `}</style>

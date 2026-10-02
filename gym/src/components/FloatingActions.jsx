@@ -145,22 +145,10 @@ export default function FloatingActions({ onOpenPassModal }) {
       </a>
 
       <style>{`
-        @media (max-width: 640px) {
+        /* Hide floating action buttons on mobile screens to prevent clutter, UI blocking, and horizontal overflow */
+        @media (max-width: 768px) {
           .floating-actions-wrapper {
-            bottom: 14px !important;
-            right: 14px !important;
-            gap: 8px !important;
-          }
-          .floating-pass-btn {
             display: none !important;
-          }
-          .floating-call-btn {
-            width: 42px !important;
-            height: 42px !important;
-          }
-          .floating-btn-scroll {
-            width: 36px !important;
-            height: 36px !important;
           }
         }
       `}</style>

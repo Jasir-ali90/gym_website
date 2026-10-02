@@ -33,7 +33,7 @@ export default function GymLifeEvents() {
       badge: '🔒 LADIES SHIFT',
       type: 'reel',
       title: '100% Private Ladies Morning Shift in Motion',
-      image: '/assets/facilities_real.jpg',
+      image: '/assets/ladies_real.jpg',
       audio: 'Original Audio - Premium Ladies Workout Session',
       likes: 519,
       comments: 42,
@@ -152,25 +152,10 @@ export default function GymLifeEvents() {
         </div>
 
         {/* Official Instagram Profile Spotlight Card */}
-        <div style={{
-          maxWidth: '880px',
-          margin: '0 auto 40px',
-          background: 'linear-gradient(135deg, rgba(20, 24, 33, 0.95), rgba(12, 14, 18, 0.95))',
-          border: '1.5px solid rgba(229, 9, 20, 0.35)',
-          borderRadius: '18px',
-          padding: '24px 28px',
-          boxShadow: '0 12px 35px rgba(0, 0, 0, 0.45)',
-          backdropFilter: 'blur(12px)',
-        }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '20px'
-          }}>
+        <div className="ig-spotlight-card">
+          <div className="ig-spotlight-inner">
             {/* Left: Avatar + Handle */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div className="ig-profile-col">
               {/* Instagram Story Gradient Ring */}
               <a
                 href="https://www.instagram.com/premiumfitnesschapter1.o/"
@@ -211,7 +196,7 @@ export default function GymLifeEvents() {
 
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{
+                  <span className="ig-handle-text" style={{
                     color: '#ffffff',
                     fontWeight: 900,
                     fontSize: '1.18rem',
@@ -238,14 +223,7 @@ export default function GymLifeEvents() {
             </div>
 
             {/* Middle: Stats */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '24px',
-              borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRight: '1px solid rgba(255, 255, 255, 0.08)',
-              padding: '0 20px',
-            }}>
+            <div className="ig-stats-col">
               <div style={{ textAlign: 'center' }}>
                 <div style={{ color: '#fff', fontWeight: 900, fontSize: '1.15rem' }}>722+</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Posts</div>
@@ -261,7 +239,7 @@ export default function GymLifeEvents() {
             </div>
 
             {/* Right: CTA Button */}
-            <div>
+            <div className="ig-cta-col">
               <a
                 href="https://www.instagram.com/premiumfitnesschapter1.o/"
                 target="_blank"
@@ -616,6 +594,89 @@ export default function GymLifeEvents() {
           })}
         </div>
       </div>
+
+      {/* Scoped CSS for Instagram Spotlight & Responsive Grid */}
+      <style>{`
+        .ig-spotlight-card {
+          max-width: 880px;
+          margin: 0 auto 40px;
+          background: linear-gradient(135deg, rgba(20, 24, 33, 0.95), rgba(12, 14, 18, 0.95));
+          border: 1.5px solid rgba(229, 9, 20, 0.35);
+          border-radius: 18px;
+          padding: 24px 28px;
+          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(12px);
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .ig-spotlight-inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 20px;
+          width: 100%;
+        }
+        .ig-profile-col {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          min-width: 0;
+        }
+        .ig-stats-col {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          border-left: 1px solid rgba(255, 255, 255, 0.08);
+          border-right: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 0 20px;
+        }
+        .ig-cta-col {
+          flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+          .ig-spotlight-card {
+            padding: 18px 14px !important;
+            margin-bottom: 28px !important;
+          }
+          .ig-spotlight-inner {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 14px !important;
+          }
+          .ig-profile-col {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 10px !important;
+            width: 100% !important;
+          }
+          .ig-stats-col {
+            width: 100% !important;
+            justify-content: space-around !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 10px 0 !important;
+            margin: 4px 0 !important;
+          }
+          .ig-cta-col {
+            width: 100% !important;
+          }
+          .ig-cta-col a {
+            width: 100% !important;
+            justify-content: center !important;
+            padding: 11px 16px !important;
+          }
+          .ig-handle-text {
+            font-size: 1.05rem !important;
+            word-break: break-all !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
