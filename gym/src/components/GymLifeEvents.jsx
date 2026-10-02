@@ -51,7 +51,7 @@ export default function GymLifeEvents() {
       audio: 'Beach Waves & Brotherhood • Premium Outing',
       likes: 812,
       comments: 94,
-      caption: 'More than a gym, we are a brotherhood! Owner Muhammad Ali with coaches and members celebrating our annual beach trip at Hawkesbay/French Beach. Live BBQ, swimming, and memories that last a lifetime.',
+      caption: 'More than a gym, we are a brotherhood! Owner Muhammad Ali Arif with coaches and members celebrating our annual beach trip at Hawkesbay/French Beach. Live BBQ, swimming, and memories that last a lifetime.',
       hashtags: '#GymFamily #Brotherhood #AnnualOuting #Hawkesbay #KarachiCoast #PremiumFitness #Chapter1O',
       instagramUrl: 'https://www.instagram.com/premiumfitnesschapter1.o/'
     },
@@ -65,7 +65,7 @@ export default function GymLifeEvents() {
       audio: 'Crowd Cheering • Olympic Lifting Platform',
       likes: 728,
       comments: 86,
-      caption: 'Max effort day! Lifters testing their 1-rep maximums on our dedicated Olympic deadlift platform. Official judge scoring, medals, and premium whey protein rewards presented by Muhammad Ali.',
+      caption: 'Max effort day! Lifters testing their 1-rep maximums on our dedicated Olympic deadlift platform. Official judge scoring, medals, and premium whey protein rewards presented by Muhammad Ali Arif.',
       hashtags: '#DeadliftPR #BenchPressMeet #PowerliftingPakistan #StrengthEmpire #RawLifting #Chapter1O',
       instagramUrl: 'https://www.instagram.com/premiumfitnesschapter1.o/'
     },
@@ -232,7 +232,7 @@ export default function GymLifeEvents() {
                   "FITNESS TO THE NEXT LEVEL"
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '2px' }}>
-                  Official Chapter 1.O Page • North Karachi • Founder: Muhammad Ali
+                  Official Chapter 1.O Page • North Karachi • Founder: Muhammad Ali Arif
                 </div>
               </div>
             </div>

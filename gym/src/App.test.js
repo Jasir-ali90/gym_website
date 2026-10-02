@@ -8,9 +8,9 @@ describe('PREMIUM FITNESS CHAPTER 1.O - Core Requirements Suite', () => {
     expect(brandElements.length).toBeGreaterThan(0);
   });
 
-  test('prominently highlights Gym Owner Muhammad Ali', () => {
+  test('prominently highlights Gym Owner Muhammad Ali Arif', () => {
     render(<App />);
-    const ownerElements = screen.getAllByText(/Muhammad Ali/i);
+    const ownerElements = screen.getAllByText(/Muhammad Ali Arif/i);
     expect(ownerElements.length).toBeGreaterThan(0);
   });
 

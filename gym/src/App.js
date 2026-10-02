@@ -36,7 +36,7 @@ function App() {
 
       {/* Main Page Content */}
       <main style={{ flex: 1 }}>
-        {/* Hero Section with Real Photo & Owner Muhammad Ali */}
+        {/* Hero Section with Real Photo & Owner Muhammad Ali Arif */}
         <Hero onOpenPassModal={handleOpenPassModal} />
 
         {/* Facilities & Equipment Tour with Real Photography */}
@@ -51,7 +51,7 @@ function App() {
         {/* Interactive BMI & Macro Target Tool */}
         <BmiCalculator />
 
-        {/* Leadership: Owner Muhammad Ali & Master Coaches */}
+        {/* Leadership: Owner Muhammad Ali Arif & Master Coaches */}
         <Trainers onOpenPassModal={handleOpenPassModal} />
 
         {/* Gym Life, Beach Outings, Competitions & Viral Reels */}

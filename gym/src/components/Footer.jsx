@@ -60,7 +60,7 @@ export default function Footer({ onOpenPassModal }) {
             </div>
 
             <p style={{ fontSize: '0.84rem', lineHeight: 1.55, color: '#94a3b8' }}>
-              Founded & operated by <strong style={{ color: '#fff' }}>Muhammad Ali</strong>. Karachi’s premier strength and fitness chain featuring heavy iron, bio-mechanic machines, and certified transformation coaches.
+              Founded & operated by <strong style={{ color: '#fff' }}>Muhammad Ali Arif</strong>. Karachi’s premier strength and fitness chain featuring heavy iron, bio-mechanic machines, and certified transformation coaches.
             </p>
 
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -136,7 +136,7 @@ export default function Footer({ onOpenPassModal }) {
               <li><a href="#facilities" onClick={(e) => handleScrollTo(e, 'facilities')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Gym Facilities & Machines</a></li>
               <li><a href="#timings" onClick={(e) => handleScrollTo(e, 'timings')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Workout Timings & Shifts</a></li>
               <li><a href="#pricing" onClick={(e) => handleScrollTo(e, 'pricing')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Membership Fees (PKR)</a></li>
-              <li><a href="#trainers" onClick={(e) => handleScrollTo(e, 'trainers')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Owner Muhammad Ali & Coaches</a></li>
+              <li><a href="#trainers" onClick={(e) => handleScrollTo(e, 'trainers')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Owner Muhammad Ali Arif & Coaches</a></li>
               <li><a href="#events" onClick={(e) => handleScrollTo(e, 'events')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Beach Outings & Events</a></li>
               <li><a href="#calculator" onClick={(e) => handleScrollTo(e, 'calculator')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>BMI & Macro Calculator</a></li>
               <li><a href="#reviews" onClick={(e) => handleScrollTo(e, 'reviews')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Google Reviews (4.5★)</a></li>
@@ -242,7 +242,7 @@ export default function Footer({ onOpenPassModal }) {
           fontSize: '0.78rem'
         }}>
           <div>
-            © {new Date().getFullYear()} PREMIUM FITNESS. All Rights Reserved. Founder & Owner: Muhammad Ali. Karachi, Pakistan.
+            © {new Date().getFullYear()} PREMIUM FITNESS. All Rights Reserved. Founder & Owner: Muhammad Ali Arif. Karachi, Pakistan.
           </div>
           <div style={{ color: '#ff4d56', fontWeight: 600, display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             <span>Chapter 1.0</span> • <span>Chapter 2.0</span> • <span>Chapter 3.0</span>

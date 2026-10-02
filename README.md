@@ -1,7 +1,7 @@
 # PREMIUM FITNESS - Official Web Application
 
 > **Karachi's Premier Elite Strength & Fitness Club Network**  
-> **Founder & Gym Owner:** Muhammad Ali  
+> **Founder & Gym Owner:** Muhammad Ali Arif  
 > **Chapters:** Chapter 1.O (North Karachi Sector 11-A), Chapter 2.0 (Buffer Zone), Chapter 3.0 (Shadman Town)  
 > **Helpline & WhatsApp:** +92 313 2229925  
 > **Rating:** 4.5 ★ (94+ Verified Google Reviews)
@@ -9,7 +9,7 @@
 ---
 
 ## 🏛️ About Premium Fitness
-PREMIUM FITNESS is Karachi's premier strength and fitness chain founded by Muhammad Ali. Engineered with imported commercial biomechanical machinery, heavy rubber hex and solid iron dumbbells up to 50kg+, high-incline cardio equipment, and dedicated powerlifting zones.
+PREMIUM FITNESS is Karachi's premier strength and fitness chain founded by Muhammad Ali Arif. Engineered with imported commercial biomechanical machinery, heavy rubber hex and solid iron dumbbells up to 50kg+, high-incline cardio equipment, and dedicated powerlifting zones.
 
 The club features:
 - **100% Uninterrupted Power & AC**: Dual industrial split units with dedicated silent generator backup guarantees 0-second downtime during load shedding.
@@ -82,4 +82,4 @@ npm test -- --watchAll=false
 - **Instagram:** [@premiumfitnesschapter1.o](https://www.instagram.com/premiumfitnesschapter1.o/)
 - **Facebook:** [Premium Fitness Official](https://www.facebook.com/premiumfitness.official/)
 
-© 2026 PREMIUM FITNESS. All Rights Reserved. Founder & Owner: Muhammad Ali. Karachi, Pakistan.
+© 2026 PREMIUM FITNESS. All Rights Reserved. Founder & Owner: Muhammad Ali Arif. Karachi, Pakistan.

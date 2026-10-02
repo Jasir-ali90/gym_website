@@ -6,14 +6,14 @@ export default function Trainers({ onOpenPassModal }) {
   const leadershipAndCoaches = [
     {
       id: 1,
-      name: 'Muhammad Ali',
+      name: 'Muhammad Ali Arif',
       role: 'Founder & Gym Owner',
       badge: '👑 FOUNDER & OWNER',
       experience: 'Gym Visionary',
       image: '/assets/owner_real.jpg',
       bio: 'Visionary founder behind Premium Fitness Chapter 1.O. Built Karachi’s leading hardcore strength club with heavy imported equipment, 100% generator backup, and high-standard discipline.',
       specialties: ['Gym Vision & Leadership', 'Athlete Development', 'Member Experience Excellence'],
-      whatsappDirect: 'https://wa.me/923132229925?text=Salam%20Muhammad%20Ali%20Bhai!%20I%20would%20like%20to%20connect%20regarding%20Premium%20Fitness%20Chapter%201.O.',
+      whatsappDirect: 'https://wa.me/923132229925?text=Salam%20Muhammad%20Ali%20Arif%20Bhai!%20I%20would%20like%20to%20connect%20regarding%20Premium%20Fitness%20Chapter%201.O.',
       instagram: 'https://www.instagram.com/premiumfitnesschapter1.o/'
     },
     {
@@ -84,7 +84,7 @@ export default function Trainers({ onOpenPassModal }) {
             <span className="text-red-gradient">HEAD COACHES</span>
           </h2>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
-            Led by gym owner <strong style={{ color: '#fff' }}>Muhammad Ali</strong>, Coach Sajjad Ali, and certified specialists dedicated to your transformation.
+            Led by gym owner <strong style={{ color: '#fff' }}>Muhammad Ali Arif</strong>, Coach Sajjad Ali, and certified specialists dedicated to your transformation.
           </p>
         </div>
 

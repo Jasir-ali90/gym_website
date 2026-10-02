@@ -52,7 +52,7 @@ export default function Hero({ onOpenPassModal }) {
           </span>
           <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#fff', fontSize: '0.8rem', fontWeight: 800 }}>
-            <UserCheck size={14} style={{ color: '#ff4d56' }} /> Owner: Muhammad Ali
+            <UserCheck size={14} style={{ color: '#ff4d56' }} /> Owner: Muhammad Ali Arif
           </span>
         </div>
 
@@ -82,7 +82,7 @@ export default function Hero({ onOpenPassModal }) {
           lineHeight: 1.6,
           fontWeight: 400,
         }}>
-          Founded by <strong style={{ color: '#ff4d56' }}>Muhammad Ali</strong>, Premium Fitness brings you elite heavy iron up to 50kg, certified coaches, and dedicated private ladies timings across our Karachi branches.
+          Founded by <strong style={{ color: '#ff4d56' }}>Muhammad Ali Arif</strong>, Premium Fitness brings you elite heavy iron up to 50kg, certified coaches, and dedicated private ladies timings across our Karachi branches.
         </p>
 
         {/* CTA Group */}

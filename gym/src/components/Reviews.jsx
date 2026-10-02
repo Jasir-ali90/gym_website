@@ -61,7 +61,7 @@ export default function Reviews() {
       category: 'machines',
       rating: 5,
       date: '4 months ago',
-      review: 'I have trained in multiple gyms across Karachi, but Chapter 1.O hits different. Everything from dumbbells to cable jungle is well maintained and lubricated. Outstanding management by Muhammad Ali.',
+      review: 'I have trained in multiple gyms across Karachi, but Chapter 1.O hits different. Everything from dumbbells to cable jungle is well maintained and lubricated. Outstanding management by Muhammad Ali Arif.',
       verified: true,
       tag: 'Strength Athlete'
     },
