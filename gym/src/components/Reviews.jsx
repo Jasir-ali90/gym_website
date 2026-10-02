@@ -105,19 +105,15 @@ export default function Reviews() {
           </p>
 
           {/* Google Live Rating Card */}
-          <div style={{
-            marginTop: '20px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '16px',
-            background: 'rgba(18, 21, 28, 0.95)',
-            border: '1px solid rgba(229, 9, 20, 0.4)',
-            borderRadius: '999px',
-            padding: '9px 22px',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
-            flexWrap: 'wrap',
-            justifyContent: 'center'
-          }}>
+          <div 
+            className="responsive-pill-badge" 
+            style={{
+              marginTop: '20px',
+              background: 'rgba(18, 21, 28, 0.95)',
+              border: '1px solid rgba(229, 9, 20, 0.4)',
+              boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{
                 background: '#4285F4',
@@ -136,12 +132,12 @@ export default function Reviews() {
                 ))}
               </div>
             </div>
-            <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+            <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
             <span style={{ color: '#cbd5e1', fontSize: '0.84rem' }}>
               Based on <strong>94+ Google Reviews</strong>
             </span>
             <a
-              href="https://www.google.com/search?q=PREMIUM+FITNESS+CHAPTER+1.O+Karachi"
+              href="https://www.google.com/search?q=PREMIUM+FITNESS+Karachi"
               target="_blank"
               rel="noopener noreferrer"
               style={{

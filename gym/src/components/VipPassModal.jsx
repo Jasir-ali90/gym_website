@@ -83,9 +83,10 @@ Please confirm my slot at 2nd Floor, 901 Shahrah-e-Usman, North Karachi.`;
         borderRadius: '20px',
         maxWidth: '520px',
         width: '100%',
+        maxHeight: '90vh',
+        overflowY: 'auto',
         position: 'relative',
         boxShadow: '0 25px 60px rgba(0, 0, 0, 0.95), 0 0 45px rgba(229, 9, 20, 0.25)',
-        overflow: 'hidden',
       }}>
         {/* Top Red Bar */}
         <div style={{

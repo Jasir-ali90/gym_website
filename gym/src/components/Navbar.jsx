@@ -178,7 +178,7 @@ export default function Navbar({ onOpenPassModal }) {
           onClick={(e) => handleNavClick(e, '#top')}
           style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '9px', flexShrink: 0 }}
         >
-          <div style={{
+          <div className="brand-logo-icon" style={{
             width: '40px',
             height: '40px',
             borderRadius: '10px',
@@ -198,7 +198,7 @@ export default function Navbar({ onOpenPassModal }) {
             />
           </div>
           <div>
-            <div style={{ 
+            <div className="brand-logo-text" style={{ 
               fontFamily: 'var(--font-display)', 
               fontWeight: 900, 
               fontSize: '1.14rem', 
@@ -222,7 +222,7 @@ export default function Navbar({ onOpenPassModal }) {
               }}>
                 EST. KARACHI
               </span>
-              <span style={{ fontSize: '0.62rem', color: '#94a3b8', letterSpacing: '0.6px', fontWeight: 600, whiteSpace: 'nowrap' }}>
+              <span className="brand-badge-secondary" style={{ fontSize: '0.62rem', color: '#94a3b8', letterSpacing: '0.6px', fontWeight: 600, whiteSpace: 'nowrap' }}>
                 ELITE FITNESS CLUBS
               </span>
             </div>
@@ -476,6 +476,24 @@ export default function Navbar({ onOpenPassModal }) {
           }
           .announcement-mobile-closed {
             display: inline !important;
+          }
+        }
+
+        /* Compact Phones (Below 480px) */
+        @media (max-width: 480px) {
+          .brand-badge-secondary {
+            display: none !important;
+          }
+        }
+
+        /* Tiny Screens (Below 380px) */
+        @media (max-width: 380px) {
+          .brand-logo-text {
+            font-size: 1.02rem !important;
+          }
+          .brand-logo-icon {
+            width: 35px !important;
+            height: 35px !important;
           }
         }
       `}</style>

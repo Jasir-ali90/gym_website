@@ -41,29 +41,16 @@ export default function Hero({ onOpenPassModal }) {
 
       <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         {/* Top Badges */}
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '10px',
-          background: 'rgba(20, 8, 10, 0.85)',
-          border: '1px solid rgba(229, 9, 20, 0.5)',
-          borderRadius: '999px',
-          padding: '6px 18px',
-          marginBottom: '20px',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 8px 25px rgba(229, 9, 20, 0.25)',
-          flexWrap: 'wrap',
-          justifyContent: 'center'
-        }}>
+        <div className="responsive-pill-badge" style={{ marginBottom: '20px' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#ff4d56', fontWeight: 800, fontSize: '0.8rem' }}>
             <Flame size={14} style={{ color: '#ef4444' }} />
-            PREMIUM FITNESS CHAPTER 1.O
+            PREMIUM FITNESS NETWORK
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+          <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <span style={{ color: '#e2e8f0', fontSize: '0.8rem', fontWeight: 600 }}>
-            Sector 11-A, North Karachi
+            Karachi, Pakistan
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+          <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#fff', fontSize: '0.8rem', fontWeight: 800 }}>
             <UserCheck size={14} style={{ color: '#ff4d56' }} /> Owner: Muhammad Ali
           </span>
@@ -72,7 +59,7 @@ export default function Hero({ onOpenPassModal }) {
         {/* Heading */}
         <h1 style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(2.1rem, 5.5vw, 4.4rem)',
+          fontSize: 'clamp(2rem, 5.2vw, 4.4rem)',
           fontWeight: 900,
           lineHeight: 1.1,
           textTransform: 'uppercase',
@@ -88,14 +75,14 @@ export default function Hero({ onOpenPassModal }) {
 
         {/* Subtitle */}
         <p style={{
-          fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)',
+          fontSize: 'clamp(0.92rem, 1.8vw, 1.15rem)',
           color: '#cbd5e1',
           maxWidth: '780px',
           margin: '0 auto 32px',
           lineHeight: 1.6,
           fontWeight: 400,
         }}>
-          Founded by <strong style={{ color: '#ff4d56' }}>Muhammad Ali</strong>, Premium Fitness Chapter 1.O on 2nd Floor, 901 Shahrah-e-Usman brings you elite heavy iron up to 50kg, certified coaches, and dedicated private ladies timings.
+          Founded by <strong style={{ color: '#ff4d56' }}>Muhammad Ali</strong>, Premium Fitness brings you elite heavy iron up to 50kg, certified coaches, and dedicated private ladies timings across our Karachi branches.
         </p>
 
         {/* CTA Group */}
@@ -121,7 +108,7 @@ export default function Hero({ onOpenPassModal }) {
           </button>
 
           <a
-            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness%20Chapter%201.O,%20North%20Karachi."
+            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness,%20Karachi."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"
@@ -141,16 +128,10 @@ export default function Hero({ onOpenPassModal }) {
         </div>
 
         {/* Metrics Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '14px',
-          maxWidth: '1080px',
-          margin: '0 auto',
-        }}>
+        <div className="hero-metrics-grid">
           {/* 1. Google Rating */}
-          <div className="glass-panel" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div style={{
+          <div className="glass-panel hero-metric-card" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div className="hero-metric-icon" style={{
               width: '44px',
               height: '44px',
               borderRadius: '10px',
@@ -166,16 +147,16 @@ export default function Hero({ onOpenPassModal }) {
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>4.5 ★</span>
-                <span style={{ fontSize: '0.7rem', background: '#3b82f6', color: '#fff', padding: '1px 6px', borderRadius: '4px', fontWeight: 700 }}>Google</span>
+                <span className="hero-metric-val" style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>4.5 ★</span>
+                <span style={{ fontSize: '0.68rem', background: '#3b82f6', color: '#fff', padding: '1px 5px', borderRadius: '4px', fontWeight: 700 }}>Google</span>
               </div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>94+ Verified Reviews</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.78rem', color: '#94a3b8' }}>94+ Verified Reviews</div>
             </div>
           </div>
 
           {/* 2. Heavy Dumbbells */}
-          <div className="glass-panel" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div style={{
+          <div className="glass-panel hero-metric-card" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div className="hero-metric-icon" style={{
               width: '44px',
               height: '44px',
               borderRadius: '10px',
@@ -190,14 +171,14 @@ export default function Hero({ onOpenPassModal }) {
               <Trophy size={22} />
             </div>
             <div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>50+</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Solid Dumbbells up to 50kg</div>
+              <div className="hero-metric-val" style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>50+</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Solid Dumbbells up to 50kg</div>
             </div>
           </div>
 
           {/* 3. 100% Power & AC */}
-          <div className="glass-panel" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div style={{
+          <div className="glass-panel hero-metric-card" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div className="hero-metric-icon" style={{
               width: '44px',
               height: '44px',
               borderRadius: '10px',
@@ -212,14 +193,14 @@ export default function Hero({ onOpenPassModal }) {
               <Zap size={22} />
             </div>
             <div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>100%</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Chilled AC & Silent Generator</div>
+              <div className="hero-metric-val" style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>100%</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Chilled AC & Silent Generator</div>
             </div>
           </div>
 
           {/* 4. Dedicated Ladies */}
-          <div className="glass-panel" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div style={{
+          <div className="glass-panel hero-metric-card" style={{ padding: '16px 20px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div className="hero-metric-icon" style={{
               width: '44px',
               height: '44px',
               borderRadius: '10px',
@@ -234,8 +215,8 @@ export default function Hero({ onOpenPassModal }) {
               <ShieldCheck size={22} />
             </div>
             <div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>100% Private</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Ladies Shift (11:30AM–4:30PM)</div>
+              <div className="hero-metric-val" style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>100% Private</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Ladies Shift (11:30AM–4:30PM)</div>
             </div>
           </div>
         </div>

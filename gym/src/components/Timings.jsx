@@ -87,26 +87,22 @@ export default function Timings({ onOpenPassModal }) {
           </p>
 
           {/* Real-time Status Card */}
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '14px',
-            background: 'rgba(18, 21, 28, 0.95)',
-            border: isOpenNow ? '1px solid rgba(16, 185, 129, 0.4)' : '1px solid rgba(239, 68, 68, 0.5)',
-            borderRadius: '999px',
-            padding: '9px 22px',
-            marginTop: '18px',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
-            flexWrap: 'wrap',
-            justifyContent: 'center'
-          }}>
+          <div 
+            className="responsive-pill-badge" 
+            style={{
+              marginTop: '18px',
+              border: isOpenNow ? '1px solid rgba(16, 185, 129, 0.4)' : '1px solid rgba(239, 68, 68, 0.5)',
+              background: 'rgba(18, 21, 28, 0.95)',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span className={isOpenNow ? 'pulse-green' : 'pulse-red'}></span>
               <span style={{ fontWeight: 800, color: isOpenNow ? '#34d399' : '#f87171', fontSize: '0.86rem' }}>
                 {statusMessage || (isOpenNow ? 'GYM IS CURRENTLY OPEN' : 'GYM IS CLOSED')}
               </span>
             </div>
-            <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+            <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
             <span style={{ color: '#cbd5e1', fontSize: '0.85rem' }}>
               Karachi: <strong style={{ color: '#fff' }}>{currentTime || '08:00 PM'}</strong> ({currentDay || 'Monday'})
             </span>

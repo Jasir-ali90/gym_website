@@ -218,7 +218,7 @@ Message: ${formState.message || 'I want more details about Chapter 1.O gym membe
               <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#e2e8f0' }}>
                 Send Quick Inquiry to Front Desk:
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+              <div className="responsive-form-row">
                 <input
                   type="text"
                   required
