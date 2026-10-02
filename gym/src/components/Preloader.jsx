@@ -6,7 +6,7 @@ export default function Preloader({ onComplete }) {
   const [statusText, setStatusText] = useState('Initializing Strength Empire...');
 
   useEffect(() => {
-    // Smooth, cinematic 10-second count up (100 steps * 100ms = 10,000ms)
+    // Smooth, cinematic 15-second count up (100 steps * 150ms = 15,000ms)
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -16,16 +16,16 @@ export default function Preloader({ onComplete }) {
 
         const nextVal = prev + 1;
 
-        // Dynamic status text across the 10-second journey
-        if (nextVal < 18) {
+        // Dynamic status text across the 15-second journey
+        if (nextVal < 15) {
           setStatusText('Initializing Strength Empire...');
-        } else if (nextVal < 38) {
+        } else if (nextVal < 32) {
           setStatusText('Loading Heavy Iron & Bio-Mechanic Machines...');
-        } else if (nextVal < 58) {
+        } else if (nextVal < 50) {
           setStatusText('Configuring Shift Timings & 100% Private Ladies Shift...');
-        } else if (nextVal < 78) {
+        } else if (nextVal < 70) {
           setStatusText('Syncing Instagram Reels & Community Feeds...');
-        } else if (nextVal < 94) {
+        } else if (nextVal < 88) {
           setStatusText('Calibrating Olympic Lifting Platforms & Cardio Zone...');
         } else if (nextVal < 100) {
           setStatusText('Finalizing Peak Athletic Readiness...');
@@ -35,7 +35,7 @@ export default function Preloader({ onComplete }) {
 
         return nextVal;
       });
-    }, 100);
+    }, 150);
 
     return () => clearInterval(interval);
   }, []);
@@ -224,7 +224,7 @@ export default function Preloader({ onComplete }) {
               width: `${progress}%`,
               background: 'linear-gradient(90deg, #ff3b45 0%, #e50914 50%, #ff1e27 100%)',
               boxShadow: '0 0 12px rgba(255, 30, 39, 0.8)',
-              transition: 'width 0.12s linear',
+              transition: 'width 0.17s linear',
               borderRadius: '999px',
             }}
           />
