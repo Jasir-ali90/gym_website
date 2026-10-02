@@ -6,46 +6,58 @@ export default function Preloader({ onComplete }) {
   const [statusText, setStatusText] = useState('Initializing Strength Empire...');
 
   useEffect(() => {
-    // Smooth progress increment
+    // Smooth, cinematic progress increment (~2.4s count up)
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           return 100;
         }
-        // Organic acceleration
-        const increment = prev < 40 ? Math.floor(Math.random() * 8) + 4
-                        : prev < 80 ? Math.floor(Math.random() * 12) + 6
-                        : Math.floor(Math.random() * 10) + 5;
+        // Smooth and steady cadence
+        let increment;
+        if (prev < 25) {
+          increment = Math.floor(Math.random() * 3) + 1; // +1 to +3
+        } else if (prev < 65) {
+          increment = Math.floor(Math.random() * 3) + 2; // +2 to +4
+        } else if (prev < 90) {
+          increment = Math.floor(Math.random() * 3) + 1; // +1 to +3
+        } else {
+          increment = Math.floor(Math.random() * 2) + 1; // +1 to +2
+        }
+
         const nextVal = Math.min(100, prev + increment);
 
-        // Update dynamic status text
-        if (nextVal < 35) {
-          setStatusText('Loading Heavy Iron & Equipment...');
-        } else if (nextVal < 70) {
+        // Update dynamic status text across the journey
+        if (nextVal < 25) {
+          setStatusText('Initializing Strength Empire...');
+        } else if (nextVal < 50) {
+          setStatusText('Loading Heavy Iron & Bio-Mechanic Machines...');
+        } else if (nextVal < 75) {
           setStatusText('Configuring Shift Timings & AC Backup...');
-        } else if (nextVal < 95) {
+        } else if (nextVal < 98) {
           setStatusText('Syncing Instagram Reels & Reviews...');
         } else {
-          setStatusText('Welcome to Premium Fitness');
+          setStatusText('Welcome to Premium Fitness Chapter 1.O');
         }
 
         return nextVal;
       });
-    }, 70);
+    }, 45);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     if (progress === 100) {
+      // Hold at 100% for 500ms so the completed state is clearly visible
       const fadeTimeout = setTimeout(() => {
         setFading(true);
-      }, 250);
+      }, 500);
 
+      // Smooth finish after fade transition
       const finishTimeout = setTimeout(() => {
         if (onComplete) onComplete();
-      }, 650);
+      }, 1050);
 
       return () => {
         clearTimeout(fadeTimeout);
