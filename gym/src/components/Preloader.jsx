@@ -6,50 +6,41 @@ export default function Preloader({ onComplete }) {
   const [statusText, setStatusText] = useState('Initializing Strength Empire...');
 
   useEffect(() => {
-    // Smooth, cinematic progress increment (~2.4s count up)
+    // Smooth, cinematic 6-second count up (100 steps * 60ms = 6000ms)
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           return 100;
         }
-        // Smooth and steady cadence
-        let increment;
-        if (prev < 25) {
-          increment = Math.floor(Math.random() * 3) + 1; // +1 to +3
-        } else if (prev < 65) {
-          increment = Math.floor(Math.random() * 3) + 2; // +2 to +4
-        } else if (prev < 90) {
-          increment = Math.floor(Math.random() * 3) + 1; // +1 to +3
-        } else {
-          increment = Math.floor(Math.random() * 2) + 1; // +1 to +2
-        }
 
-        const nextVal = Math.min(100, prev + increment);
+        const nextVal = prev + 1;
 
-        // Update dynamic status text across the journey
-        if (nextVal < 25) {
+        // Dynamic status text across the 6-second journey
+        if (nextVal < 20) {
           setStatusText('Initializing Strength Empire...');
-        } else if (nextVal < 50) {
+        } else if (nextVal < 42) {
           setStatusText('Loading Heavy Iron & Bio-Mechanic Machines...');
-        } else if (nextVal < 75) {
+        } else if (nextVal < 68) {
           setStatusText('Configuring Shift Timings & AC Backup...');
-        } else if (nextVal < 98) {
-          setStatusText('Syncing Instagram Reels & Reviews...');
+        } else if (nextVal < 88) {
+          setStatusText('Syncing Instagram Reels & Community Feeds...');
+        } else if (nextVal < 100) {
+          setStatusText('Finalizing Peak Athletic Readiness...');
         } else {
           setStatusText('Welcome to Premium Fitness Chapter 1.O');
         }
 
         return nextVal;
       });
-    }, 45);
+    }, 60);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     if (progress === 100) {
-      // Hold at 100% for 500ms so the completed state is clearly visible
+      // Hold at 100% for 500ms so the completed welcome is clearly seen
       const fadeTimeout = setTimeout(() => {
         setFading(true);
       }, 500);
@@ -65,13 +56,6 @@ export default function Preloader({ onComplete }) {
       };
     }
   }, [progress, onComplete]);
-
-  const handleSkip = () => {
-    setFading(true);
-    setTimeout(() => {
-      if (onComplete) onComplete();
-    }, 300);
-  };
 
   return (
     <div
@@ -276,28 +260,6 @@ export default function Preloader({ onComplete }) {
             {statusText}
           </div>
         </div>
-
-        {/* Quick Skip Button */}
-        <button
-          onClick={handleSkip}
-          style={{
-            marginTop: '28px',
-            background: 'transparent',
-            border: 'none',
-            color: '#64748b',
-            fontSize: '0.72rem',
-            letterSpacing: '1px',
-            textTransform: 'uppercase',
-            cursor: 'pointer',
-            padding: '6px 14px',
-            borderRadius: '999px',
-            transition: 'color 0.2s ease',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = '#cbd5e1')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
-        >
-          Skip Intro →
-        </button>
       </div>
 
       {/* Scoped CSS for Preloader Animations */}
