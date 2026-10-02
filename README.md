@@ -1,39 +1,45 @@
-# PREMIUM FITNESS CHAPTER 1.O - Official Web Application
+# PREMIUM FITNESS - Official Web Application
 
-> **Karachi's Premier Luxury Strength & Fitness Club**  
-> **Location:** 2nd Floor, Plot No: A-901, Shahrah-e-Usman, Sector 11-A, North Karachi  
+> **Karachi's Premier Elite Strength & Fitness Club Network**  
 > **Founder & Gym Owner:** Muhammad Ali  
+> **Chapters:** Chapter 1.O (North Karachi Sector 11-A), Chapter 2.0 (Buffer Zone), Chapter 3.0 (Shadman Town)  
 > **Helpline & WhatsApp:** +92 313 2229925  
 > **Rating:** 4.5 ★ (94+ Verified Google Reviews)
 
 ---
 
-## 🏛️ About Premium Fitness Chapter 1.O
-PREMIUM FITNESS CHAPTER 1.O is a hardcore strength and fitness sanctuary in North Karachi designed with imported commercial biomechanical machinery, heavy rubber hex and solid iron dumbbells up to 50kg+, high-incline cardio equipment, and dedicated powerlifting zones.
+## 🏛️ About Premium Fitness
+PREMIUM FITNESS is Karachi's premier strength and fitness chain founded by Muhammad Ali. Engineered with imported commercial biomechanical machinery, heavy rubber hex and solid iron dumbbells up to 50kg+, high-incline cardio equipment, and dedicated powerlifting zones.
 
 The club features:
-- **100% Uninterrupted Power & AC**: Dual industrial split units with dedicated silent generator backup guarantees 0-second downtime during Karachi load shedding.
-- **100% Private Ladies Hours**: Exclusive timings (11:30 AM to 04:30 PM, Mon-Sat) with certified female fitness instructors and zero male presence.
-- **Strict Sunday Closure**: Gym is strictly closed on Sundays for comprehensive machine servicing, cable greasing, and deep medical-grade sanitization.
+- **100% Uninterrupted Power & AC**: Dual industrial split units with dedicated silent generator backup guarantees 0-second downtime during load shedding.
+- **100% Private Ladies Hours**: Exclusive timings (11:30 AM to 04:30 PM, Mon-Sat) with certified female instructors and zero male presence.
+- **Strict Sunday Closure**: All chapters are strictly closed on Sundays for deep sanitization, machine servicing, and maintenance.
 
 ---
 
 ## ⚡ Key Web Features
 - **Red & Black Hardcore Aesthetic**: Custom Crimson (`#E50914`), Flame (`#FF1E27`), and Obsidian (`#060709`) luxury palette.
-- **Real Photography**: Actual gym floor, knurled 50kg dumbbells, Olympic benches, community beach outings at Hawkesbay/French Beach, and real photos of head coach Sajjad Ali.
-- **Interactive Shift Tracker**: Live Pakistan Standard Time clock with automatic active shift detection (Men's Morning, Ladies Exclusive, Men's Evening, or Sunday Closed).
-- **Interactive BMI & Calorie Tool**: Mifflin-St Jeor equation calculator with 1-click WhatsApp plan generator for Coach Ahmed Khan.
-- **Digital VIP Pass Generator**: Custom confetti animation + unique digital guest pass (`PFC1-XXXX`) generation with QR stamp.
-- **Instant WhatsApp Integration**: Direct pre-filled WhatsApp lead buttons across every membership package and trainer profile.
+- **4K Official Remastered Branding**: High-resolution custom vector logo and crystal-clear browser favicon.
+- **Real Photography**: Actual gym floor, knurled 50kg dumbbells, Olympic benches, and community strength events.
+- **Interactive Shift Tracker**: Live Pakistan Standard Time clock with automatic active shift detection.
+- **Interactive BMI & Calorie Tool**: Mifflin-St Jeor equation calculator with 1-click WhatsApp plan generator.
+- **Digital VIP Pass Generator**: Unique digital guest pass (`PFC1-XXXX`) generation with QR stamp and confetti.
+- **Instant WhatsApp Integration**: Direct pre-filled WhatsApp lead buttons across every plan and trainer.
 
 ---
 
-## 💻 Tech Stack
-- **Framework:** React 18
-- **Icons:** Lucide React
-- **Effects:** Canvas Confetti
-- **Styling:** Vanilla CSS3 (Custom Design System, Glassmorphic Panels, Hardware-Accelerated Micro-Animations)
-- **Deployment:** Production optimized static bundle / Vercel / Netlify / GitHub Pages
+## ☁️ Deploy to Vercel (1-Click Ready)
+
+This repository is pre-configured with `vercel.json` for zero-configuration deployment on [Vercel](https://vercel.com):
+
+1. Log in to [Vercel](https://vercel.com).
+2. Click **"Add New..."** → **"Project"**.
+3. Import your GitHub repository: `Jasir-ali90/gym_website`.
+4. Leave all settings at default (**Framework Preset:** `Create React App` or `Other`).
+5. Click **Deploy**!
+
+*Note:* Both root deployment and subfolder (`gym`) deployment are supported out-of-the-box thanks to dual `vercel.json` configurations and automated build routing.
 
 ---
 
@@ -48,33 +54,32 @@ The club features:
 # Clone the repository
 git clone https://github.com/Jasir-ali90/gym_website.git
 
-# Navigate to gym project directory
-cd gym_website/gym
+# Navigate to project root
+cd gym_website
 
-# Install dependencies
-npm install
-
-# Start local development server
+# Install dependencies and start
+npm run build
 npm start
 ```
-The website will open automatically at `http://localhost:3000`.
+Or directly inside the `gym` subfolder:
+```bash
+cd gym
+npm install
+npm start
+```
 
 ### Running Tests
 ```bash
+cd gym
 npm test -- --watchAll=false
-```
-
-### Production Build
-```bash
-npm run build
 ```
 
 ---
 
 ## 📞 Gym Contact & Inquiries
-- **Front Desk:** 0313-2229925
+- **Helpline:** 0313-2229925
 - **WhatsApp:** [+92 313 2229925](https://wa.me/923132229925)
 - **Instagram:** [@premiumfitnesschapter1.o](https://www.instagram.com/premiumfitnesschapter1.o/)
 - **Facebook:** [Premium Fitness Official](https://www.facebook.com/premiumfitness.official/)
 
-© 2026 PREMIUM FITNESS CHAPTER 1.O. All Rights Reserved.
+© 2026 PREMIUM FITNESS. All Rights Reserved. Founder & Owner: Muhammad Ali. Karachi, Pakistan.

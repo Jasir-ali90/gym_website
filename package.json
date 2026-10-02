@@ -1,0 +1,11 @@
+{
+  "name": "premium-fitness-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PREMIUM FITNESS - Official Elite Fitness & Gym Network Karachi Website",
+  "scripts": {
+    "build": "cd gym && npm run build",
+    "start": "cd gym && npm start",
+    "test": "cd gym && npm test -- --watchAll=false"
+  }
+}
