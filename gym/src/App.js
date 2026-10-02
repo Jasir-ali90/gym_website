@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Facilities from './components/Facilities';
@@ -15,6 +16,7 @@ import VipPassModal from './components/VipPassModal';
 
 function App() {
   const [isPassModalOpen, setIsPassModalOpen] = useState(false);
+  const [loading, setLoading] = useState(process.env.NODE_ENV !== 'test');
 
   const handleOpenPassModal = () => {
     setIsPassModalOpen(true);
@@ -26,6 +28,9 @@ function App() {
 
   return (
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      {/* Animated Splash Preloader with Official Emblem */}
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
+
       {/* Luxury Navigation Bar */}
       <Navbar onOpenPassModal={handleOpenPassModal} />
 
