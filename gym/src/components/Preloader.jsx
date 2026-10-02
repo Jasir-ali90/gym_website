@@ -3,54 +3,37 @@ import React, { useState, useEffect } from 'react';
 export default function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [fading, setFading] = useState(false);
-  const [statusText, setStatusText] = useState('Initializing Strength Empire...');
+
+  // Exact 15.0 seconds duration guaranteed via real-time clock
+  const DURATION_MS = 15000;
 
   useEffect(() => {
-    // Smooth, cinematic 15-second count up (100 steps * 150ms = 15,000ms)
+    const startTime = Date.now();
+
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min(100, Math.floor((elapsed / DURATION_MS) * 100));
 
-        const nextVal = prev + 1;
+      setProgress(pct);
 
-        // Dynamic status text across the 15-second journey
-        if (nextVal < 15) {
-          setStatusText('Initializing Strength Empire...');
-        } else if (nextVal < 32) {
-          setStatusText('Loading Heavy Iron & Bio-Mechanic Machines...');
-        } else if (nextVal < 50) {
-          setStatusText('Configuring Shift Timings & 100% Private Ladies Shift...');
-        } else if (nextVal < 70) {
-          setStatusText('Syncing Instagram Reels & Community Feeds...');
-        } else if (nextVal < 88) {
-          setStatusText('Calibrating Olympic Lifting Platforms & Cardio Zone...');
-        } else if (nextVal < 100) {
-          setStatusText('Finalizing Peak Athletic Readiness...');
-        } else {
-          setStatusText('Welcome to Premium Fitness Chapter 1.O');
-        }
-
-        return nextVal;
-      });
-    }, 150);
+      if (pct >= 100) {
+        clearInterval(interval);
+      }
+    }, 40); // 25 updates per second for super-smooth continuous counter
 
     return () => clearInterval(interval);
-  }, []);
+  }, [DURATION_MS]);
 
   useEffect(() => {
     if (progress === 100) {
-      // Hold at 100% for 500ms so the completed welcome is clearly seen
+      // Hold at 100% for 500ms so the user sees the completed state
       const fadeTimeout = setTimeout(() => {
         setFading(true);
       }, 500);
 
-      // Smooth finish after fade transition
       const finishTimeout = setTimeout(() => {
         if (onComplete) onComplete();
-      }, 1050);
+      }, 1000);
 
       return () => {
         clearTimeout(fadeTimeout);
@@ -58,6 +41,17 @@ export default function Preloader({ onComplete }) {
       };
     }
   }, [progress, onComplete]);
+
+  // Derived status text - directly synchronized with progress percentage
+  const getStatusText = (pct) => {
+    if (pct < 15) return 'Initializing Strength Empire...';
+    if (pct < 32) return 'Loading Heavy Iron & Bio-Mechanic Machines...';
+    if (pct < 50) return 'Configuring Shift Timings & 100% Private Ladies Shift...';
+    if (pct < 70) return 'Syncing Instagram Reels & Community Feeds...';
+    if (pct < 88) return 'Calibrating Olympic Lifting Platforms & Cardio Zone...';
+    if (pct < 100) return 'Finalizing Peak Athletic Readiness...';
+    return 'Welcome to Premium Fitness Chapter 1.O';
+  };
 
   return (
     <div
@@ -259,7 +253,7 @@ export default function Preloader({ onComplete }) {
               textAlign: 'center',
             }}
           >
-            {statusText}
+            {getStatusText(progress)}
           </div>
         </div>
       </div>
