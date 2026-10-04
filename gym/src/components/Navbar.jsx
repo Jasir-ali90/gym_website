@@ -4,11 +4,8 @@ import { Phone, MessageCircle, Menu, X, Sparkles, MapPin, Clock } from 'lucide-r
 const NAV_LINKS = [
   { name: 'Facilities', href: '#facilities', id: 'facilities' },
   { name: 'Timings', href: '#timings', id: 'timings' },
-  { name: 'Packages', href: '#pricing', id: 'pricing' },
+  { name: 'Membership Plans', href: '#pricing', id: 'pricing' },
   { name: 'Coaches', href: '#trainers', id: 'trainers' },
-  { name: 'Events', href: '#events', id: 'events' },
-  { name: 'BMI Tool', href: '#calculator', id: 'calculator' },
-  { name: 'Reviews', href: '#reviews', id: 'reviews' },
   { name: 'Location', href: '#location', id: 'location' },
 ];
 
@@ -91,7 +88,8 @@ export default function Navbar({ onOpenPassModal }) {
       return;
     }
 
-    const targetId = href.replace('#', '');
+    let targetId = href.replace('#', '');
+    if (targetId === 'plans') targetId = 'pricing';
     const element = document.getElementById(targetId);
     if (element) {
       const headerOffset = 115;

@@ -82,11 +82,11 @@ export default function FloatingActions({ onOpenPassModal }) {
         <span>Free VIP Pass</span>
       </button>
 
-      {/* Direct Call Button */}
+      {/* Direct Call Button (Desktop only) */}
       <a
         href="tel:+923132229925"
         aria-label="Call Gym Front Desk"
-        className="floating-call-btn"
+        className="floating-call-btn desktop-floating-item"
         style={{
           width: '46px',
           height: '46px',
@@ -106,37 +106,39 @@ export default function FloatingActions({ onOpenPassModal }) {
         <Phone size={20} />
       </a>
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating WhatsApp Button - Sticky on Both Desktop & Mobile */}
       <a
-        href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20want%20to%20inquire%20about%20Premium%20Fitness%20Chapter%201.O,%20North%20Karachi."
+        href="https://wa.me/923132229925?text=Hi%20Premium%20Fitness,%20I%20want%20membership%20details"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noreferrer"
         aria-label="Chat on WhatsApp"
+        className="floating-whatsapp-btn"
         style={{
-          width: '52px',
-          height: '52px',
+          width: '56px',
+          height: '56px',
           borderRadius: '50%',
           background: '#25D366',
           color: '#fff',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 10px 25px rgba(37, 211, 102, 0.45)',
+          boxShadow: '0 12px 28px rgba(37, 211, 102, 0.55), 0 0 16px rgba(37, 211, 102, 0.35)',
           textDecoration: 'none',
-          transition: 'transform 0.2s ease',
-          position: 'relative'
+          transition: 'all 0.25s ease',
+          position: 'relative',
+          cursor: 'pointer'
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.08)')}
+        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
         onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
       >
-        <MessageCircle size={28} />
+        <MessageCircle size={30} />
         <span
           style={{
             position: 'absolute',
-            top: '2px',
-            right: '2px',
-            width: '11px',
-            height: '11px',
+            top: '3px',
+            right: '3px',
+            width: '12px',
+            height: '12px',
             borderRadius: '50%',
             backgroundColor: '#10b981',
             border: '2px solid #fff'
@@ -145,10 +147,20 @@ export default function FloatingActions({ onOpenPassModal }) {
       </a>
 
       <style>{`
-        /* Hide floating action buttons on mobile screens to prevent clutter, UI blocking, and horizontal overflow */
+        /* On mobile devices, keep the WhatsApp button prominent while hiding secondary floating clutter */
         @media (max-width: 768px) {
           .floating-actions-wrapper {
+            bottom: 16px !important;
+            right: 16px !important;
+          }
+          .desktop-floating-item,
+          .floating-pass-btn,
+          .floating-btn-scroll {
             display: none !important;
+          }
+          .floating-whatsapp-btn {
+            width: 54px !important;
+            height: 54px !important;
           }
         }
       `}</style>

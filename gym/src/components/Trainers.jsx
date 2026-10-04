@@ -55,43 +55,51 @@ export default function Trainers({ onOpenPassModal }) {
   ];
 
   return (
-    <section id="trainers" style={{ padding: '85px 0', backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid rgba(229, 9, 20, 0.2)' }}>
+    <section 
+      id="trainers" 
+      style={{ 
+        padding: '95px 0', 
+        backgroundColor: 'var(--bg-primary)', 
+        borderTop: '1px solid rgba(229, 9, 20, 0.25)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+      }}
+    >
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 40px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
             color: '#ff4d56',
             fontWeight: 800,
-            fontSize: '0.82rem',
+            fontSize: '0.85rem',
             textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginBottom: '10px'
+            letterSpacing: '1.2px',
+            marginBottom: '12px'
           }}>
-            <Award size={15} /> CERTIFIED LEADERSHIP
+            <Award size={16} /> CERTIFIED COACHING & FOUNDER
           </div>
           <h2 style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.9rem, 3.8vw, 2.9rem)',
+            fontSize: 'clamp(2rem, 4vw, 3.2rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             lineHeight: 1.15,
-            marginBottom: '14px'
+            marginBottom: '16px',
+            color: '#ffffff'
           }}>
-            MEET THE OWNER & <br />
-            <span className="text-red-gradient">HEAD COACHES</span>
+            MEET THE FOUNDER & <span className="text-red-gradient">HEAD COACHES</span>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
-            Led by gym owner <strong style={{ color: '#fff' }}>Muhammad Ali Arif</strong>, Coach Sajjad Ali, and certified specialists dedicated to your transformation.
+          <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto' }}>
+            Led by founder <strong style={{ color: '#ffffff' }}>Muhammad Ali Arif</strong> and master strength coaches with over a decade of elite training experience.
           </p>
         </div>
 
         {/* Leadership & Trainers Grid */}
-        <div className="grid-4" style={{ gap: '20px' }}>
+        <div className="grid-4" style={{ gap: '22px' }}>
           {leadershipAndCoaches.map((t) => (
-            <div key={t.id} className="glass-card" style={{ display: 'flex', flexDirection: 'column' }}>
+            <div key={t.id} className="glass-card" style={{ display: 'flex', flexDirection: 'column', borderRadius: '18px', overflow: 'hidden' }}>
               {/* Photo Frame */}
               <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
                 <img

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Play, Users, ExternalLink, Heart, MessageCircle, Bookmark, Share2, CheckCircle2 } from 'lucide-react';
 import { Instagram } from './BrandIcons';
 
-export default function GymLifeEvents() {
+export default function GymLifeEvents({ isEmbedded = false }) {
   const [activeTab, setActiveTab] = useState('all');
   const [likedPosts, setLikedPosts] = useState({});
 
@@ -104,7 +104,7 @@ export default function GymLifeEvents() {
     : instagramPosts.filter(p => p.category === activeTab);
 
   return (
-    <section id="events" style={{ padding: '85px 0', backgroundColor: '#07080b', position: 'relative' }}>
+    <div style={{ padding: isEmbedded ? '10px 0 0' : '85px 0', backgroundColor: isEmbedded ? 'transparent' : '#07080b', position: 'relative' }}>
       {/* Background Accent Gradients */}
       <div style={{
         position: 'absolute',
@@ -677,6 +677,6 @@ export default function GymLifeEvents() {
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 }

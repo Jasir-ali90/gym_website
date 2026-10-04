@@ -41,48 +41,48 @@ export default function Hero({ onOpenPassModal }) {
 
       <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         {/* Top Badges */}
-        <div className="responsive-pill-badge" style={{ marginBottom: '20px' }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#ff4d56', fontWeight: 800, fontSize: '0.8rem' }}>
-            <Flame size={14} style={{ color: '#ef4444' }} />
-            PREMIUM FITNESS NETWORK
+        <div className="responsive-pill-badge" style={{ marginBottom: '22px' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#ff4d56', fontWeight: 800, fontSize: '0.82rem', letterSpacing: '0.5px' }}>
+            <Flame size={15} style={{ color: '#ef4444' }} />
+            PREMIUM FITNESS GYM
           </span>
-          <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-          <span style={{ color: '#e2e8f0', fontSize: '0.8rem', fontWeight: 600 }}>
+          <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.25)' }}>•</span>
+          <span style={{ color: '#e2e8f0', fontSize: '0.82rem', fontWeight: 600 }}>
             Karachi, Pakistan
           </span>
-          <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#fff', fontSize: '0.8rem', fontWeight: 800 }}>
-            <UserCheck size={14} style={{ color: '#ff4d56' }} /> Owner: Muhammad Ali Arif
+          <span className="badge-divider" style={{ color: 'rgba(255,255,255,0.25)' }}>•</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#fff', fontSize: '0.82rem', fontWeight: 800 }}>
+            <UserCheck size={15} style={{ color: '#ff4d56' }} /> Founder: Muhammad Ali Arif
           </span>
         </div>
 
         {/* Heading */}
         <h1 style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(2rem, 5.2vw, 4.4rem)',
+          fontSize: 'clamp(2.4rem, 5.5vw, 4.5rem)',
           fontWeight: 900,
           lineHeight: 1.1,
           textTransform: 'uppercase',
           letterSpacing: '-0.5px',
           color: '#ffffff',
-          maxWidth: '1020px',
-          margin: '0 auto 18px',
+          maxWidth: '1050px',
+          margin: '0 auto 20px',
           textShadow: '0 4px 30px rgba(0,0,0,0.9)',
         }}>
-          WHERE DISCIPLINE MEETS <br />
-          <span className="text-red-gradient red-glow-text">STRENGTH & EMPIRE</span>
+          ELEVATE YOUR <br />
+          <span className="text-red-gradient red-glow-text">FITNESS JOURNEY</span>
         </h1>
 
         {/* Subtitle */}
         <p style={{
-          fontSize: 'clamp(0.92rem, 1.8vw, 1.15rem)',
-          color: '#cbd5e1',
+          fontSize: 'clamp(1.02rem, 1.9vw, 1.25rem)',
+          color: '#e2e8f0',
           maxWidth: '780px',
-          margin: '0 auto 32px',
-          lineHeight: 1.6,
+          margin: '0 auto 36px',
+          lineHeight: 1.65,
           fontWeight: 400,
         }}>
-          Founded by <strong style={{ color: '#ff4d56' }}>Muhammad Ali Arif</strong>, Premium Fitness brings you elite heavy iron up to 50kg, certified coaches, and dedicated private ladies timings across our Karachi branches.
+          Experience Premium Coaching, Elite Facilities, & Custom Plans. Founded by <strong style={{ color: '#ff4d56', fontWeight: 700 }}>Muhammad Ali Arif</strong>, Karachi’s hardcore destination for serious bodybuilding and personal fitness.
         </p>
 
         {/* CTA Group */}
@@ -92,38 +92,38 @@ export default function Hero({ onOpenPassModal }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '14px',
+            gap: '16px',
             flexWrap: 'wrap',
-            marginBottom: '46px',
+            marginBottom: '48px',
           }}
         >
           <button
             onClick={onOpenPassModal}
             className="btn-primary-red"
-            style={{ padding: '15px 32px', fontSize: '0.96rem' }}
+            style={{ padding: '16px 34px', fontSize: '1rem', fontWeight: 800 }}
           >
             <Sparkles size={18} />
-            <span>CLAIM FREE 1-DAY PASS</span>
-            <ArrowRight size={17} />
+            <span>JOIN NOW</span>
+            <ArrowRight size={18} />
           </button>
+
+          <a
+            href="#timings"
+            className="btn-secondary-dark"
+            style={{ padding: '16px 30px', fontSize: '0.98rem', fontWeight: 700 }}
+          >
+            <span>EXPLORE CLASSES & TIMINGS</span>
+          </a>
 
           <a
             href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness,%20Karachi."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"
-            style={{ padding: '15px 28px', fontSize: '0.96rem' }}
+            style={{ padding: '16px 28px', fontSize: '0.98rem', fontWeight: 700 }}
           >
             <MessageCircle size={18} />
             <span>Chat on WhatsApp</span>
-          </a>
-
-          <a
-            href="#pricing"
-            className="btn-secondary-dark"
-            style={{ padding: '15px 26px', fontSize: '0.96rem' }}
-          >
-            <span>Membership Fees (PKR)</span>
           </a>
         </div>
 

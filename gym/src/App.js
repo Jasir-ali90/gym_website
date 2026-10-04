@@ -5,10 +5,8 @@ import Hero from './components/Hero';
 import Facilities from './components/Facilities';
 import Timings from './components/Timings';
 import Pricing from './components/Pricing';
-import BmiCalculator from './components/BmiCalculator';
 import Trainers from './components/Trainers';
-import GymLifeEvents from './components/GymLifeEvents';
-import Reviews from './components/Reviews';
+import CommunityHub from './components/CommunityHub';
 import LocationContact from './components/LocationContact';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
@@ -34,33 +32,27 @@ function App() {
       {/* Luxury Navigation Bar */}
       <Navbar onOpenPassModal={handleOpenPassModal} />
 
-      {/* Main Page Content */}
+      {/* Main Page Content - Curated Continuous Flow (5-6 Core Sections) */}
       <main style={{ flex: 1 }}>
-        {/* Hero Section with Real Photo & Owner Muhammad Ali Arif */}
+        {/* 1. Hero Section with Real Photo & Owner Muhammad Ali Arif */}
         <Hero onOpenPassModal={handleOpenPassModal} />
 
-        {/* Facilities & Equipment Tour with Real Photography */}
+        {/* 2. Key Facilities / Value Propositions (Curated 4-card grid) */}
         <Facilities onOpenPassModal={handleOpenPassModal} />
 
-        {/* Timings & Shifts (Sunday Strictly Closed) */}
+        {/* 3. Class Schedule & Gym Timings (Interactive Shift Tabs & Sunday Closed) */}
         <Timings onOpenPassModal={handleOpenPassModal} />
 
-        {/* Membership Packages in PKR */}
+        {/* 4. Flexible Membership Packages in PKR (3 Crisp Tiers + Ladies Pass Toggle) */}
         <Pricing onOpenPassModal={handleOpenPassModal} />
 
-        {/* Interactive BMI & Macro Target Tool */}
-        <BmiCalculator />
-
-        {/* Leadership: Owner Muhammad Ali Arif & Master Coaches */}
+        {/* 5. Certified Leadership: Owner Muhammad Ali Arif & Master Coaches */}
         <Trainers onOpenPassModal={handleOpenPassModal} />
 
-        {/* Gym Life, Beach Outings, Competitions & Viral Reels */}
-        <GymLifeEvents />
+        {/* 6. Community Hub: Tabbed Reviews (4.5★), Gym Life Outings & BMI Calculator */}
+        <CommunityHub />
 
-        {/* Real Google Reviews 4.5 Stars */}
-        <Reviews />
-
-        {/* Location, Google Maps & Direct Front Desk Desk */}
+        {/* 7. Flagship Location, Google Maps & Direct Front Desk Desk */}
         <LocationContact />
       </main>
 

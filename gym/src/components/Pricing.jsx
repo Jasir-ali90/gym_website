@@ -1,11 +1,13 @@
-import React from 'react';
-import { Check, Sparkles, MessageCircle, Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { Check, Sparkles, MessageCircle, Award, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function Pricing({ onOpenPassModal }) {
-  const plans = [
+  const [membershipType, setMembershipType] = useState('standard');
+
+  const standardPlans = [
     {
-      id: 'monthly',
-      name: 'Standard Monthly',
+      id: 'starter',
+      name: 'Starter Monthly',
       tagline: 'Ideal for getting started with zero long-term commitment',
       badge: null,
       price: '4,000',
@@ -13,35 +15,56 @@ export default function Pricing({ onOpenPassModal }) {
       popular: false,
       features: [
         'Full access to all commercial gym equipment',
-        'Standard floor trainer assistance',
+        'Standard floor coach assistance & spotting',
         'Locker & changing room access',
-        'Continuous AC & generator backup',
+        'Continuous chilled AC & generator backup',
         'Valid for Morning or Evening shifts',
       ],
-      whatsappMsg: 'Assalam-o-Alaikum! I want to join the Standard Monthly Plan (PKR 4,000) at Premium Fitness Chapter 1.O North Karachi.'
+      whatsappMsg: 'Assalam-o-Alaikum! I want to join the Starter Monthly Plan (PKR 4,000) at Premium Fitness Chapter 1.O North Karachi.'
     },
     {
-      id: 'quarterly',
-      name: '3-Month Transformation',
-      tagline: 'Most recommended for visible body recomposition',
-      badge: '🔥 MOST POPULAR',
+      id: 'pro',
+      name: 'Pro Transformation',
+      tagline: 'Most recommended for visible, rapid body recomposition',
+      badge: '★ RECOMMENDED • MOST POPULAR',
       price: '10,500',
-      period: 'for 3 months',
+      period: 'billed quarterly (3 months)',
       popular: true,
       features: [
-        'Everything in Monthly Plan',
-        'Customized Workout Split (PPL / Bro Split)',
-        'Personalized Macro & Calorie Guidance',
-        'Bi-weekly Body Fat & Measurement Track',
+        'Everything included in Monthly Plan',
+        'Personalized Workout Split (PPL / Upper-Lower)',
+        'Custom Macro & Calorie Guidance for Pakistani Meals',
+        'Bi-weekly Body Fat & Measurement Tracking',
         'Priority locker access',
         'Complimentary Premium Shaker Bottle',
       ],
-      whatsappMsg: 'Assalam-o-Alaikum! I want to enroll in the 3-Month Transformation Plan (PKR 10,500) at Premium Fitness Chapter 1.O North Karachi.'
+      whatsappMsg: 'Assalam-o-Alaikum! I want to enroll in the Pro 3-Month Transformation Plan (PKR 10,500) at Premium Fitness Chapter 1.O North Karachi.'
     },
     {
-      id: 'ladies',
-      name: 'Ladies Exclusive Pass',
-      tagline: 'Dedicated 11:30 AM – 4:30 PM private hours',
+      id: 'annual',
+      name: 'VIP Annual',
+      tagline: 'For hardcore athletes committed to year-round discipline',
+      badge: '👑 VALUE SAVER (SAVE 25%)',
+      price: '36,000',
+      period: 'per year (Rs. 3,000/mo equiv.)',
+      popular: false,
+      features: [
+        'Unlimited 365-day all-access to gym facilities',
+        '4 Free Personal Training Sessions with Master Coach',
+        'Custom Diet Plan by Coach Ahmed Khan',
+        'VIP Permanent Locker assigned with your name',
+        'Free guest passes for 2 friends each month',
+        'Exclusive Premium Fitness Gym Bag & Tee',
+      ],
+      whatsappMsg: 'Assalam-o-Alaikum! I want to register for the VIP Annual Pass (PKR 36,000) at Premium Fitness Chapter 1.O.'
+    }
+  ];
+
+  const ladiesPlans = [
+    {
+      id: 'ladies-monthly',
+      name: 'Ladies Private Monthly',
+      tagline: 'Dedicated 11:30 AM – 4:30 PM private workout hours',
       badge: '🌸 100% PRIVATE',
       price: '4,500',
       period: 'per month',
@@ -50,126 +73,199 @@ export default function Pricing({ onOpenPassModal }) {
         'Guaranteed zero male entry & complete privacy',
         'Certified Female Instructor guidance on floor',
         'Specialized fat-loss & toning routine',
-        'Full cardio & free weights access',
-        'Private locker & washroom',
+        'Full cardio & free weights floor access',
+        'Private locker & hygienic washroom',
       ],
-      whatsappMsg: 'Assalam-o-Alaikum! I want to register for the Ladies Exclusive Pass at Premium Fitness Chapter 1.O North Karachi.'
+      whatsappMsg: 'Assalam-o-Alaikum! I want to join the Ladies Private Monthly Pass (PKR 4,500) at Premium Fitness Chapter 1.O North Karachi.'
     },
     {
-      id: 'annual',
-      name: 'VIP Elite 1-Year Pass',
-      tagline: 'For hardcore athletes committed to year-round discipline',
-      badge: '👑 BEST VALUE - SAVE 30%',
-      price: '34,000',
+      id: 'ladies-quarterly',
+      name: 'Ladies 3-Month Sculpt',
+      tagline: 'Structured waist sculpting & toning program',
+      badge: '★ BEST VALUE FOR LADIES',
+      price: '11,500',
+      period: 'billed for 3 months',
+      popular: true,
+      features: [
+        'Full private access for 3 months',
+        'Personalized waist sculpting & toning routine',
+        'PCOS & hormonal-friendly nutrition guidelines',
+        'Progressive cardio HIIT supervision',
+        'Complimentary workout shaker bottle',
+      ],
+      whatsappMsg: 'Assalam-o-Alaikum! I want to enroll in the Ladies 3-Month Sculpt Plan (PKR 11,500) at Premium Fitness Chapter 1.O.'
+    },
+    {
+      id: 'ladies-annual',
+      name: 'Ladies VIP Annual',
+      tagline: 'Year-round fitness, health & confidence',
+      badge: '👑 ANNUAL VIP',
+      price: '38,000',
       period: 'per year',
       popular: false,
       features: [
-        'Unlimited 365-day all-access to Chapter 1.O',
-        '4 Free Personal Training Sessions with Master Coach',
-        'Custom Diet Plan by Coach Ahmed Khan',
-        'VIP Permanent Locker assigned with your name',
-        'Free guest passes for 2 friends each month',
-        'Exclusive Premium Fitness Gym Bag & Tee',
+        'Unlimited 365 days private ladies access',
+        'Continuous female instructor guidance',
+        'Quarterly body recomposition tracking',
+        'Dedicated permanent locker space',
+        '2 Free guest passes for female friends',
       ],
-      whatsappMsg: 'Assalam-o-Alaikum! I want to register for the VIP Elite 1-Year Pass (PKR 34,000) at Premium Fitness Chapter 1.O.'
+      whatsappMsg: 'Assalam-o-Alaikum! I want to enroll in the Ladies VIP Annual Pass (PKR 38,000) at Premium Fitness Chapter 1.O.'
     }
   ];
 
+  const activePlans = membershipType === 'standard' ? standardPlans : ladiesPlans;
+
   return (
-    <section id="pricing" style={{ padding: '85px 0', backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid rgba(229, 9, 20, 0.2)' }}>
+    <section 
+      id="pricing" 
+      style={{ 
+        padding: '95px 0', 
+        backgroundColor: 'var(--bg-secondary)', 
+        borderTop: '1px solid rgba(229, 9, 20, 0.25)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+      }}
+    >
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 40px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 46px' }}>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
             color: '#ff4d56',
             fontWeight: 800,
-            fontSize: '0.82rem',
+            fontSize: '0.85rem',
             textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginBottom: '10px'
+            letterSpacing: '1.2px',
+            marginBottom: '12px'
           }}>
-            <Award size={15} /> TRANSPARENT PACKAGES
+            <Award size={16} /> TRANSPARENT MEMBERSHIP PACKAGES
           </div>
           <h2 style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.9rem, 3.8vw, 2.9rem)',
+            fontSize: 'clamp(2rem, 4vw, 3.2rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             lineHeight: 1.15,
-            marginBottom: '14px'
+            marginBottom: '16px',
+            color: '#ffffff'
           }}>
-            INVEST IN YOUR <br />
-            <span className="text-red-gradient">HEALTH & PHYSIQUE</span>
+            FLEXIBLE <span className="text-red-gradient">MEMBERSHIP PLANS</span>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
-            Direct transparent pricing in Pakistani Rupees (PKR). No hidden fees or registration traps.
+          <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 24px' }}>
+            Direct transparent pricing in Pakistani Rupees (PKR). No hidden admission fees, no surprise charges.
           </p>
 
+          {/* Category Toggle Tabs */}
           <div style={{
-            marginTop: '16px',
+            display: 'inline-flex',
+            background: 'rgba(0,0,0,0.5)',
+            padding: '5px',
+            borderRadius: '999px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            marginBottom: '12px'
+          }}>
+            <button
+              onClick={() => setMembershipType('standard')}
+              style={{
+                padding: '9px 24px',
+                borderRadius: '999px',
+                border: 'none',
+                background: membershipType === 'standard' ? 'var(--red-gradient)' : 'transparent',
+                color: '#ffffff',
+                fontWeight: 700,
+                fontSize: '0.88rem',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              Standard Men's & General Access
+            </button>
+            <button
+              onClick={() => setMembershipType('ladies')}
+              style={{
+                padding: '9px 24px',
+                borderRadius: '999px',
+                border: 'none',
+                background: membershipType === 'ladies' ? 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)' : 'transparent',
+                color: '#ffffff',
+                fontWeight: 700,
+                fontSize: '0.88rem',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
+            >
+              <ShieldCheck size={15} />
+              <span>100% Private Ladies Pass</span>
+            </button>
+          </div>
+
+          <div style={{
+            marginTop: '8px',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
             background: 'rgba(37, 211, 102, 0.1)',
             border: '1px solid rgba(37, 211, 102, 0.3)',
             color: '#4ade80',
-            padding: '7px 16px',
+            padding: '7px 18px',
             borderRadius: '999px',
-            fontSize: '0.82rem',
+            fontSize: '0.85rem',
             fontWeight: 600
           }}>
-            <MessageCircle size={14} /> Instant admission confirmation on WhatsApp (+92 313 2229925)
+            <MessageCircle size={15} /> Instant admission confirmation on WhatsApp (+92 313 2229925)
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid-4" style={{ alignItems: 'stretch' }}>
-          {plans.map((plan) => (
+        {/* Crisp 3-Card Grid */}
+        <div className="grid-3" style={{ alignItems: 'stretch', gap: '28px' }}>
+          {activePlans.map((plan) => (
             <div
               key={plan.id}
               className={`glass-card pricing-card ${plan.popular ? 'red-shimmer-border' : ''}`}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '34px 22px 26px',
+                padding: '36px 28px',
                 position: 'relative',
-                overflow: 'visible',
-                marginTop: '16px',
+                borderRadius: '20px',
                 background: plan.popular 
                   ? 'linear-gradient(180deg, rgba(229, 9, 20, 0.12) 0%, rgba(18, 21, 28, 0.98) 100%)' 
                   : 'var(--bg-card)',
                 border: plan.popular 
-                  ? '1.5px solid rgba(229, 9, 20, 0.65)' 
-                  : plan.id === 'ladies' 
-                  ? '1px solid rgba(236, 72, 153, 0.35)' 
-                  : '1px solid rgba(255, 255, 255, 0.08)',
-                zIndex: plan.popular ? 3 : 1,
+                  ? '2px solid rgba(229, 9, 20, 0.75)' 
+                  : '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: plan.popular 
+                  ? '0 16px 45px rgba(229, 9, 20, 0.25)' 
+                  : 'var(--shadow-card)',
+                transform: plan.popular ? 'scale(1.03)' : 'scale(1)',
+                zIndex: plan.popular ? 2 : 1,
+                transition: 'all 0.3s ease',
               }}
             >
-              {/* Floating Badge (Never Clipped) */}
+              {/* Floating Badge */}
               {plan.badge && (
                 <div style={{
                   position: 'absolute',
                   top: '-13px',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  background: plan.id === 'ladies'
+                  background: membershipType === 'ladies'
                     ? 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)'
-                    : plan.id === 'quarterly'
+                    : plan.id === 'pro'
                     ? 'var(--red-gradient)'
                     : 'linear-gradient(135deg, #f59e0b 0%, #b45309 100%)',
                   color: '#fff',
-                  padding: '4px 14px',
+                  padding: '5px 16px',
                   borderRadius: '999px',
-                  fontSize: '0.7rem',
+                  fontSize: '0.72rem',
                   fontWeight: 900,
-                  letterSpacing: '0.5px',
-                  boxShadow: plan.id === 'ladies'
-                    ? '0 4px 15px rgba(236, 72, 153, 0.5)'
-                    : '0 4px 15px rgba(229, 9, 20, 0.55)',
+                  letterSpacing: '0.6px',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.5)',
                   whiteSpace: 'nowrap',
                   zIndex: 10,
                 }}>
@@ -178,36 +274,34 @@ export default function Pricing({ onOpenPassModal }) {
               )}
 
               {/* Plan Header */}
-              <div style={{ marginBottom: '16px' }}>
+              <div style={{ marginBottom: '18px' }}>
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.12rem, 1.35vw, 1.25rem)',
+                  fontSize: '1.4rem',
                   fontWeight: 800,
-                  color: '#fff',
-                  marginBottom: '6px',
+                  color: '#ffffff',
+                  marginBottom: '8px',
                   lineHeight: 1.25,
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word'
                 }}>
                   {plan.name}
                 </h3>
-                <p style={{ color: '#94a3b8', fontSize: '0.8rem', minHeight: '38px', lineHeight: 1.45 }}>
+                <p style={{ color: '#94a3b8', fontSize: '0.88rem', minHeight: '42px', lineHeight: 1.5 }}>
                   {plan.tagline}
                 </p>
               </div>
 
-              {/* Price display */}
+              {/* Price Display */}
               <div style={{
-                padding: '14px 0',
+                padding: '16px 0',
                 borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-                marginBottom: '18px',
+                marginBottom: '22px',
               }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '5px' }}>
-                  <span style={{ fontSize: '0.85rem', color: '#94a3b8', fontWeight: 600 }}>PKR</span>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                  <span style={{ fontSize: '0.92rem', color: '#94a3b8', fontWeight: 700 }}>PKR</span>
                   <span style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: '2.2rem',
+                    fontSize: '2.5rem',
                     fontWeight: 900,
                     color: plan.popular ? '#ff4d56' : '#ffffff',
                     lineHeight: 1
@@ -215,20 +309,20 @@ export default function Pricing({ onOpenPassModal }) {
                     {plan.price}
                   </span>
                 </div>
-                <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '3px' }}>
+                <div style={{ color: '#cbd5e1', fontSize: '0.8rem', marginTop: '4px', fontWeight: 500 }}>
                   {plan.period}
                 </div>
               </div>
 
               {/* Features List */}
-              <div style={{ flex: 1, marginBottom: '22px' }}>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#e2e8f0', textTransform: 'uppercase', marginBottom: '10px' }}>
-                  Included Features:
+              <div style={{ flex: 1, marginBottom: '26px' }}>
+                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#e2e8f0', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px' }}>
+                  Included Benefits:
                 </div>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '9px' }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {plan.features.map((feat, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.82rem', color: '#cbd5e1' }}>
-                      <Check size={14} style={{ color: plan.popular ? '#ef4444' : '#34d399', flexShrink: 0, marginTop: '2px' }} />
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.88rem', color: '#e2e8f0', lineHeight: 1.5 }}>
+                      <Check size={16} style={{ color: plan.popular ? '#ef4444' : '#34d399', flexShrink: 0, marginTop: '2px' }} />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -244,13 +338,14 @@ export default function Pricing({ onOpenPassModal }) {
                 style={{
                   width: '100%',
                   justifyContent: 'center',
-                  fontSize: '0.85rem',
-                  padding: '11px 14px',
-                  textAlign: 'center'
+                  fontSize: '0.92rem',
+                  padding: '13px 20px',
+                  textAlign: 'center',
+                  fontWeight: 800
                 }}
               >
-                <MessageCircle size={15} />
-                <span>Join on WhatsApp</span>
+                <MessageCircle size={16} />
+                <span>JOIN ON WHATSAPP</span>
               </a>
             </div>
           ))}
@@ -258,23 +353,24 @@ export default function Pricing({ onOpenPassModal }) {
 
         {/* Free Pass Banner */}
         <div style={{
-          marginTop: '45px',
+          marginTop: '52px',
           textAlign: 'center',
-          background: 'rgba(229, 9, 20, 0.05)',
-          border: '1px dashed rgba(229, 9, 20, 0.4)',
-          borderRadius: '16px',
-          padding: '22px 20px',
+          background: 'rgba(229, 9, 20, 0.06)',
+          border: '1.5px dashed rgba(229, 9, 20, 0.45)',
+          borderRadius: '18px',
+          padding: '26px 24px',
         }}>
-          <p style={{ color: '#e2e8f0', fontSize: '0.96rem', marginBottom: '12px' }}>
-            Want to try the machines & environment first? Take a complimentary session.
+          <p style={{ color: '#e2e8f0', fontSize: '1.05rem', fontWeight: 600, marginBottom: '14px' }}>
+            Want to test out the machines and atmosphere before committing?
           </p>
           <button
             onClick={onOpenPassModal}
             className="btn-primary-red"
-            style={{ padding: '11px 26px', fontSize: '0.88rem' }}
+            style={{ padding: '13px 30px', fontSize: '0.94rem' }}
           >
-            <Sparkles size={15} />
+            <Sparkles size={16} />
             <span>Generate Free 1-Day Trial Pass</span>
+            <ArrowRight size={16} />
           </button>
         </div>
       </div>

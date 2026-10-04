@@ -137,9 +137,7 @@ export default function Footer({ onOpenPassModal }) {
               <li><a href="#timings" onClick={(e) => handleScrollTo(e, 'timings')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Workout Timings & Shifts</a></li>
               <li><a href="#pricing" onClick={(e) => handleScrollTo(e, 'pricing')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Membership Fees (PKR)</a></li>
               <li><a href="#trainers" onClick={(e) => handleScrollTo(e, 'trainers')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Owner Muhammad Ali Arif & Coaches</a></li>
-              <li><a href="#events" onClick={(e) => handleScrollTo(e, 'events')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Beach Outings & Events</a></li>
-              <li><a href="#calculator" onClick={(e) => handleScrollTo(e, 'calculator')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>BMI & Macro Calculator</a></li>
-              <li><a href="#reviews" onClick={(e) => handleScrollTo(e, 'reviews')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Google Reviews (4.5★)</a></li>
+              <li><a href="#location" onClick={(e) => handleScrollTo(e, 'location')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Location & Directions</a></li>
               <li>
                 <button
                   onClick={onOpenPassModal}

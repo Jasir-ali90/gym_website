@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Quote, ThumbsUp, ExternalLink } from 'lucide-react';
 
-export default function Reviews() {
+export default function Reviews({ isEmbedded = false }) {
   const [filter, setFilter] = useState('all');
 
   const reviews = [
@@ -72,8 +72,8 @@ export default function Reviews() {
     : reviews.filter(r => r.category === filter);
 
   return (
-    <section id="reviews" style={{ padding: '85px 0', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
-      <div className="container">
+    <div style={{ padding: isEmbedded ? '10px 0 0' : '85px 0', backgroundColor: isEmbedded ? 'transparent' : 'var(--bg-primary)', position: 'relative' }}>
+      <div className={isEmbedded ? '' : 'container'}>
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 36px' }}>
           <div style={{
@@ -248,6 +248,6 @@ export default function Reviews() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

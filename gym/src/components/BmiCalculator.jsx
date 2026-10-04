@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calculator, MessageCircle, Activity, Flame, Target } from 'lucide-react';
 
-export default function BmiCalculator() {
+export default function BmiCalculator({ isEmbedded = false }) {
   const [gender, setGender] = useState('male');
   const [age, setAge] = useState(24);
   const [heightFeet, setHeightFeet] = useState(5);
@@ -60,8 +60,8 @@ export default function BmiCalculator() {
 Please guide me with a customized diet & training plan!`;
 
   return (
-    <section id="calculator" style={{ padding: '85px 0', backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
-      <div className="container">
+    <div style={{ padding: isEmbedded ? '10px 0 0' : '85px 0', backgroundColor: isEmbedded ? 'transparent' : 'var(--bg-primary)', position: 'relative' }}>
+      <div className={isEmbedded ? '' : 'container'}>
         {/* Section Heading */}
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 36px' }}>
           <div style={{
@@ -391,6 +391,6 @@ Please guide me with a customized diet & training plan!`;
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

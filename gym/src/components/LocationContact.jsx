@@ -19,36 +19,44 @@ Message: ${formState.message || 'I want more details about Chapter 1.O gym membe
   };
 
   return (
-    <section id="location" style={{ padding: '85px 0', backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid rgba(229, 9, 20, 0.2)' }}>
+    <section 
+      id="location" 
+      style={{ 
+        padding: '95px 0', 
+        backgroundColor: 'var(--bg-secondary)', 
+        borderTop: '1px solid rgba(229, 9, 20, 0.25)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+      }}
+    >
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 40px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
             color: '#ff4d56',
             fontWeight: 800,
-            fontSize: '0.82rem',
+            fontSize: '0.85rem',
             textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginBottom: '10px'
+            letterSpacing: '1.2px',
+            marginBottom: '12px'
           }}>
-            <MapPin size={15} /> VISIT OUR FLAGSHIP CLUB
+            <MapPin size={16} /> VISIT OUR FLAGSHIP CLUB
           </div>
           <h2 style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.9rem, 3.8vw, 2.9rem)',
+            fontSize: 'clamp(2rem, 4vw, 3.2rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             lineHeight: 1.15,
-            marginBottom: '14px'
+            marginBottom: '16px',
+            color: '#ffffff'
           }}>
-            LOCATED IN <br />
-            <span className="text-red-gradient">NORTH KARACHI SECTOR 11-A</span>
+            LOCATED IN <span className="text-red-gradient">NORTH KARACHI SECTOR 11-A</span>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
-            Centrally located on Shahrah-e-Usman with lift access, dedicated security, and nearby parking.
+          <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto' }}>
+            Centrally situated on main Shahrah-e-Usman with lift access, dedicated security, and easily accessible parking.
           </p>
         </div>
 
