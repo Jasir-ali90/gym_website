@@ -19,7 +19,7 @@ const FACILITIES_DATA = [
     tag: 'STRENGTH PLATFORMS',
     color: '#ef4444',
     icon: Dumbbell,
-    image: '/assets/gym1.jpg',
+    image: '/assets/dumbbells_real.jpg',
     description: 'Purpose-built for powerlifters, bodybuilders, and athletes who demand heavy, calibrated iron and solid footing.',
     specs: [
       'Dumbbells up to 50KG in 2.5kg micro-increments',
@@ -37,7 +37,7 @@ const FACILITIES_DATA = [
     tag: 'TARGETED HYPERTROPHY',
     color: '#ff4d56',
     icon: Layers,
-    image: '/assets/gym2.jpg',
+    image: '/assets/bench_real.jpg',
     description: 'Precision resistance curve machines engineered to isolate muscle groups while protecting joints and ligaments.',
     specs: [
       '45-Degree Leg Press & Heavy Hack Squat',
@@ -55,7 +55,7 @@ const FACILITIES_DATA = [
     tag: 'STRICT PRIVACY GUARANTEE',
     color: '#ec4899',
     icon: ShieldCheck,
-    image: '/assets/ladies_fitness.jpg',
+    image: '/assets/ladies_real.jpg',
     description: 'An exclusive, discreet, and empowering fitness environment designed exclusively for women during the 11:30 AM – 04:30 PM shift.',
     specs: [
       '100% Private, curtained & tinted workout floor',
@@ -73,7 +73,7 @@ const FACILITIES_DATA = [
     tag: 'AEROBIC & VO2 MAX',
     color: '#06b6d4',
     icon: Activity,
-    image: '/assets/gym3.jpg',
+    image: '/assets/cardio_real.jpg',
     description: 'High-end cardiovascular equipment outfitted with interactive screens to maximize calorie burn and cardiovascular health.',
     specs: [
       'Commercial heavy-duty motor treadmills with incline up to 15%',
@@ -91,7 +91,7 @@ const FACILITIES_DATA = [
     tag: 'RECOVERY & COMFORT',
     color: '#10b981',
     icon: Lock,
-    image: '/assets/gym4.jpg',
+    image: '/assets/strength_event.jpg',
     description: 'Clean, sanitized, and secure locker rooms designed so you can train before work or freshen up right after a grueling workout.',
     specs: [
       'Individual digital padlock lockers for personal belongings',
@@ -109,7 +109,7 @@ const FACILITIES_DATA = [
     tag: 'NUTRITION & HYDRATION',
     color: '#eab308',
     icon: Coffee,
-    image: '/assets/gym5.jpg',
+    image: '/assets/event_gathering.jpg',
     description: 'On-site nutrition hub providing authentic, 100% lab-tested supplements, protein shakes, and hydration drinks.',
     specs: [
       'Freshly blended 100% Whey Protein Isolate shakes',

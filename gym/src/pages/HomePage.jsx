@@ -414,7 +414,7 @@ export default function HomePage({ onOpenPassModal }) {
                 position: 'relative'
               }}>
                 <img 
-                  src="/assets/trainer_ali.webp" 
+                  src="/assets/owner_real.jpg" 
                   alt="Muhammad Ali Arif - Founder & Master Coach"
                   style={{ width: '100%', height: '420px', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
                 />
