@@ -1,37 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Phone, MessageCircle, Menu, X, Sparkles, MapPin, Clock } from 'lucide-react';
 
-const NAV_LINKS = [
-  { name: 'Facilities', href: '#facilities', id: 'facilities' },
-  { name: 'Timings', href: '#timings', id: 'timings' },
-  { name: 'Membership Plans', href: '#pricing', id: 'pricing' },
-  { name: 'Coaches', href: '#trainers', id: 'trainers' },
-  { name: 'Location', href: '#location', id: 'location' },
+const NAV_PAGES = [
+  { name: 'Home', path: '/' },
+  { name: 'Facilities', path: '/facilities' },
+  { name: 'Timings', path: '/timings' },
+  { name: 'Membership', path: '/pricing' },
+  { name: 'Coaches', path: '/trainers' },
+  { name: 'Community & Tools', path: '/community' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar({ onOpenPassModal }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
   const headerRef = useRef(null);
+  const location = useLocation();
 
-  // Track scroll position for styling and active section spy
+  // Track scroll position for styling
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-
-      // Section scrollspy
-      const scrollPosition = window.scrollY + 160;
-      for (let i = NAV_LINKS.length - 1; i >= 0; i--) {
-        const section = document.getElementById(NAV_LINKS[i].id);
-        if (section) {
-          const top = section.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(NAV_LINKS[i].id);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -39,13 +29,10 @@ export default function Navbar({ onOpenPassModal }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Sync hash on initial load
+  // Close mobile drawer on route change
   useEffect(() => {
-    if (window.location.hash) {
-      const hashId = window.location.hash.replace('#', '');
-      setActiveSection(hashId);
-    }
-  }, []);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   // Close mobile drawer on escape key and outside click
   useEffect(() => {
@@ -75,35 +62,6 @@ export default function Navbar({ onOpenPassModal }) {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [mobileMenuOpen]);
-
-  // Smooth scroll handler with offset clearance
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-
-    if (href === '#top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      window.history.pushState(null, '', '#');
-      setActiveSection('');
-      return;
-    }
-
-    let targetId = href.replace('#', '');
-    if (targetId === 'plans') targetId = 'pricing';
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 115;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      window.history.pushState(null, '', href);
-      setActiveSection(targetId);
-    }
-  };
 
   return (
     <header
@@ -171,9 +129,8 @@ export default function Navbar({ onOpenPassModal }) {
         }}
       >
         {/* Brand Logo */}
-        <a 
-          href="#top" 
-          onClick={(e) => handleNavClick(e, '#top')}
+        <Link 
+          to="/"
           style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '9px', flexShrink: 0 }}
         >
           <div className="brand-logo-icon" style={{
@@ -225,17 +182,16 @@ export default function Navbar({ onOpenPassModal }) {
               </span>
             </div>
           </div>
-        </a>
+        </Link>
 
-        {/* Desktop Links (Visible on 1024px+) */}
+        {/* Desktop Multi-Page Links (Visible on 1024px+) */}
         <nav className="desktop-nav-menu">
-          {NAV_LINKS.map((link) => {
-            const isActive = activeSection === link.id;
+          {NAV_PAGES.map((page) => {
+            const isActive = location.pathname === page.path;
             return (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+              <NavLink
+                key={page.name}
+                to={page.path}
                 style={{
                   color: isActive ? '#ff2a38' : '#cbd5e1',
                   textDecoration: 'none',
@@ -249,7 +205,7 @@ export default function Navbar({ onOpenPassModal }) {
                 }}
                 className={`nav-link-item ${isActive ? 'active-nav-link' : ''}`}
               >
-                {link.name}
+                {page.name}
                 {isActive && (
                   <span style={{
                     position: 'absolute',
@@ -262,7 +218,7 @@ export default function Navbar({ onOpenPassModal }) {
                     boxShadow: '0 0 8px rgba(229, 9, 20, 0.8)'
                   }} />
                 )}
-              </a>
+              </NavLink>
             );
           })}
         </nav>
@@ -291,30 +247,6 @@ export default function Navbar({ onOpenPassModal }) {
             <span>Free Pass</span>
           </button>
 
-          {/* Mobile Quick WhatsApp Button */}
-          <a
-            href="https://wa.me/923132229925?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20joining%20Premium%20Fitness,%20Karachi."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mobile-quick-wa-btn"
-            aria-label="WhatsApp"
-            style={{
-              width: '38px',
-              height: '38px',
-              borderRadius: '9px',
-              background: '#25D366',
-              color: '#fff',
-              display: 'none',
-              alignItems: 'center',
-              justifyContent: 'center',
-              textDecoration: 'none',
-              boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
-              flexShrink: 0
-            }}
-          >
-            <MessageCircle size={18} />
-          </a>
-
           {/* Mobile Hamburger Toggle Button - ALWAYS Visible on Mobile */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -341,7 +273,7 @@ export default function Navbar({ onOpenPassModal }) {
         </div>
       </div>
 
-      {/* Mobile Drawer (Absolute overlay, never shifts sticky header height) */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div
           className="mobile-drawer-menu"
@@ -365,13 +297,13 @@ export default function Navbar({ onOpenPassModal }) {
             zIndex: 1001,
           }}
         >
-          {NAV_LINKS.map((link) => {
-            const isActive = activeSection === link.id;
+          {NAV_PAGES.map((page) => {
+            const isActive = location.pathname === page.path;
             return (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+              <NavLink
+                key={page.name}
+                to={page.path}
+                onClick={() => setMobileMenuOpen(false)}
                 style={{
                   color: isActive ? '#ff4d56' : '#e2e8f0',
                   textDecoration: 'none',
@@ -387,11 +319,11 @@ export default function Navbar({ onOpenPassModal }) {
                   transition: 'background 0.2s ease',
                 }}
               >
-                <span>{link.name}</span>
+                <span>{page.name}</span>
                 <span style={{ color: isActive ? '#ff4d56' : 'rgba(255,255,255,0.3)', fontSize: '0.85rem' }}>
                   {isActive ? '●' : '→'}
                 </span>
-              </a>
+              </NavLink>
             );
           })}
 
@@ -437,7 +369,7 @@ export default function Navbar({ onOpenPassModal }) {
         </div>
       )}
 
-      {/* Scoped CSS for Perfect Navbar Responsiveness */}
+      {/* Scoped CSS */}
       <style>{`
         .desktop-nav-menu {
           display: flex;
@@ -456,9 +388,6 @@ export default function Navbar({ onOpenPassModal }) {
           .desktop-action-btn {
             display: none !important;
           }
-          .mobile-quick-wa-btn {
-            display: flex !important;
-          }
           .mobile-hamburger-btn {
             display: flex !important;
           }
@@ -474,9 +403,6 @@ export default function Navbar({ onOpenPassModal }) {
           }
           .announcement-mobile-closed {
             display: inline !important;
-          }
-          .mobile-quick-wa-btn {
-            display: none !important; /* HIDE REDUNDANT WHATSAPP IN NAVBAR HEADER ON PHONES FOR CLEAN HAMBURGER */
           }
         }
 

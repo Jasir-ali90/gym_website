@@ -1,23 +1,9 @@
 import React from 'react';
-import { MessageCircle, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MessageCircle, MapPin, Phone, Sparkles } from 'lucide-react';
 import { Instagram, Facebook } from './BrandIcons';
 
 export default function Footer({ onOpenPassModal }) {
-  const handleScrollTo = (e, id) => {
-    e.preventDefault();
-    const elem = document.getElementById(id);
-    if (elem) {
-      const headerOffset = 115;
-      const elementPosition = elem.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      window.history.pushState(null, '', '#' + id);
-    }
-  };
-
   return (
     <footer style={{
       backgroundColor: '#040507',
@@ -31,7 +17,7 @@ export default function Footer({ onOpenPassModal }) {
         <div className="grid-4" style={{ gap: '30px', marginBottom: '45px' }}>
           {/* Col 1: Brand & Owner */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{
                 width: '44px',
                 height: '44px',
@@ -57,10 +43,10 @@ export default function Footer({ onOpenPassModal }) {
                 </div>
                 <div style={{ fontSize: '0.65rem', color: '#ff4d56', fontWeight: 800 }}>ELITE FITNESS CHAIN • KARACHI</div>
               </div>
-            </div>
+            </Link>
 
             <p style={{ fontSize: '0.84rem', lineHeight: 1.55, color: '#94a3b8' }}>
-              Founded & operated by <strong style={{ color: '#fff' }}>Muhammad Ali Arif</strong>. Karachi’s premier strength and fitness chain featuring heavy iron, bio-mechanic machines, and certified transformation coaches.
+              Founded & operated by <strong style={{ color: '#fff' }}>Muhammad Ali Arif</strong>. Karachi’s premier strength and fitness chain featuring calibrated iron, bio-mechanic machines, and certified coaches.
             </p>
 
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -127,18 +113,20 @@ export default function Footer({ onOpenPassModal }) {
             </div>
           </div>
 
-          {/* Col 2: Navigation */}
+          {/* Col 2: Navigation Links */}
           <div>
             <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 800, color: '#fff', marginBottom: '14px', textTransform: 'uppercase' }}>
-              Quick Links
+              Club Webpages
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.82rem' }}>
-              <li><a href="#facilities" onClick={(e) => handleScrollTo(e, 'facilities')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Gym Facilities & Machines</a></li>
-              <li><a href="#timings" onClick={(e) => handleScrollTo(e, 'timings')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Workout Timings & Shifts</a></li>
-              <li><a href="#pricing" onClick={(e) => handleScrollTo(e, 'pricing')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Membership Fees (PKR)</a></li>
-              <li><a href="#trainers" onClick={(e) => handleScrollTo(e, 'trainers')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Owner Muhammad Ali Arif & Coaches</a></li>
-              <li><a href="#location" onClick={(e) => handleScrollTo(e, 'location')} style={{ color: '#cbd5e1', textDecoration: 'none' }}>Location & Directions</a></li>
-              <li>
+              <li><Link to="/" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Home</Link></li>
+              <li><Link to="/facilities" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Facilities & Equipment</Link></li>
+              <li><Link to="/timings" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Workout Timings & Shifts</Link></li>
+              <li><Link to="/pricing" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Membership Fees & Plans</Link></li>
+              <li><Link to="/trainers" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Coaches & Ali Arif</Link></li>
+              <li><Link to="/community" style={{ color: '#cbd5e1', textDecoration: 'none' }}>BMI Tool & Community</Link></li>
+              <li><Link to="/contact" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Contact & 3 Branches</Link></li>
+              <li style={{ marginTop: '4px' }}>
                 <button
                   onClick={onOpenPassModal}
                   style={{
@@ -149,10 +137,13 @@ export default function Footer({ onOpenPassModal }) {
                     padding: 0,
                     fontSize: '0.82rem',
                     fontWeight: 700,
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
                   }}
                 >
-                  ★ Claim Free 1-Day Trial Pass
+                  <Sparkles size={13} /> Claim Free Trial Pass
                 </button>
               </li>
             </ul>
